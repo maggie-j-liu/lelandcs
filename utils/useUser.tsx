@@ -1,12 +1,18 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import firebase from "./firebase";
 import { useRouter } from "next/router";
 
 const useAuth = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<firebase.User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-  const handleUser = (rawUser) => {
+  const handleUser = (rawUser: firebase.User | null) => {
     if (rawUser) {
       setUser(rawUser);
       setLoading(false);
@@ -15,7 +21,7 @@ const useAuth = () => {
       setLoading(false);
     }
   };
-  const signInWithGoogle = (fn) => {
+  const signInWithGoogle = (fn: Function) => {
     setLoading(true);
     return firebase
       .auth()
@@ -28,7 +34,12 @@ const useAuth = () => {
         router.back();
       });
   };
-  const createUserWithEmail = (email, password, username, fn) => {
+  const createUserWithEmail = (
+    email: string,
+    password: string,
+    username: string,
+    fn: Function
+  ) => {
     setLoading(true);
     return firebase
       .auth()
@@ -42,7 +53,7 @@ const useAuth = () => {
       });
   };
 
-  const signInWithEmail = (email, password) => {
+  const signInWithEmail = (email: string, password: string) => {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -55,7 +66,7 @@ const useAuth = () => {
     return firebase
       .auth()
       .signOut()
-      .then(() => handleUser(false));
+      .then(() => handleUser(null));
   };
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(handleUser);
@@ -72,8 +83,11 @@ const useAuth = () => {
     createUserWithEmail,
   };
 };
-const UserContext = createContext();
-export const UserContextProvider = ({ children }) => {
+const UserContext = createContext<{
+  user: firebase.User | null;
+  logout: Function;
+}>({ user: null, logout: () => {} });
+export const UserContextProvider = ({ children }: { children: ReactNode }) => {
   const auth = useAuth();
   return <UserContext.Provider value={auth}>{children}</UserContext.Provider>;
 };

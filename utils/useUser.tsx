@@ -21,7 +21,7 @@ const useAuth = () => {
       setLoading(false);
     }
   };
-  const signInWithGoogle = (fn: Function) => {
+  const signInWithGoogle = (fn?: Function) => {
     setLoading(true);
     return firebase
       .auth()
@@ -31,34 +31,6 @@ const useAuth = () => {
         if (fn) {
           await fn(response);
         }
-        router.back();
-      });
-  };
-  const createUserWithEmail = (
-    email: string,
-    password: string,
-    username: string,
-    fn: Function
-  ) => {
-    setLoading(true);
-    return firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(async (response) => {
-        handleUser(response.user);
-        if (fn) {
-          await fn(response, username);
-        }
-        router.back();
-      });
-  };
-
-  const signInWithEmail = (email: string, password: string) => {
-    return firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((response) => {
-        handleUser(response.user);
         router.back();
       });
   };
@@ -79,14 +51,14 @@ const useAuth = () => {
     logout,
     loading,
     signInWithGoogle,
-    signInWithEmail,
-    createUserWithEmail,
   };
 };
 const UserContext = createContext<{
   user: firebase.User | null;
   logout: Function;
-}>({ user: null, logout: () => {} });
+  loading: boolean;
+  signInWithGoogle: Function;
+}>({ user: null, logout: () => {}, loading: true, signInWithGoogle: () => {} });
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
   const auth = useAuth();
   return <UserContext.Provider value={auth}>{children}</UserContext.Provider>;

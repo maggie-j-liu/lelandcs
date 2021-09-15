@@ -3,6 +3,7 @@ import Ticket from "@/components/Ticket";
 import formatTicketNum from "@/utils/formatTicketNum";
 import getTicket from "@/utils/getTicket";
 import Head from "next/head";
+import { SITE_URL } from "@/utils/constants";
 const TicketNum = ({
   ticketNum,
   displayName,
@@ -17,7 +18,7 @@ const TicketNum = ({
       <Head>
         <meta
           property="og:image"
-          content={`http://localhost:3000/api/ticket-image/${ticketNum}`}
+          content={`${SITE_URL}/api/ticket-image/${ticketNum}`}
         />
       </Head>
       <div className={"w-full h-screen flex justify-center items-center"}>

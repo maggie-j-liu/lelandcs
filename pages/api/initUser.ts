@@ -13,6 +13,7 @@ export default async function handler(
   const { idToken, name, email, photo } = body;
   if (!idToken) {
     res.status(400).send("No idToken");
+    return;
   }
   const uid = await auth
     .verifyIdToken(idToken)

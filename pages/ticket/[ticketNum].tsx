@@ -1,7 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { db } from "@/utils/admin";
 import Ticket from "@/components/Ticket";
 import formatTicketNum from "@/utils/formatTicketNum";
+import getTicket from "@/utils/getTicket";
+import Head from "next/head";
 const TicketNum = ({
   ticketNum,
   displayName,
@@ -12,14 +13,24 @@ const TicketNum = ({
   photoURL: string;
 }) => {
   return (
-    <div className={"w-full h-screen flex justify-center items-center"}>
-      <Ticket
-        ticketNum={formatTicketNum(ticketNum)}
-        photoURL={photoURL}
-        displayName={displayName}
-        bgColor={"bg-gray-900"}
-      />
-    </div>
+    <>
+      <Head>
+        <meta
+          property="og:image"
+          content={`http://localhost:3000/api/ticket-image/${ticketNum}`}
+        />
+      </Head>
+      <div className={"w-full h-screen flex justify-center items-center"}>
+        <div className="ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket-md lg:ticket-lg">
+          <Ticket
+            ticketNum={formatTicketNum(ticketNum)}
+            photoURL={photoURL}
+            displayName={displayName}
+            bgColor={"bg-gray-900"}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -33,36 +44,23 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (!params || !params.ticketNum) {
+  const ticketInfo = await getTicket(params?.ticketNum as string);
+  if (ticketInfo.invalid) {
     return {
       notFound: true,
     };
-  }
-  if (isNaN(+params.ticketNum)) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const uid = await db
-    .ref(`ticketToId/${+params.ticketNum}`)
-    .once("value")
-    .then((snap) => snap.val());
-  if (!uid) {
+  } else if (ticketInfo.notFound) {
     return {
       notFound: true,
       revalidate: 60,
     };
+  } else {
+    return {
+      props: {
+        ticketNum: ticketInfo.ticketNum,
+        displayName: ticketInfo.displayName,
+        photoURL: ticketInfo.photoURL,
+      },
+    };
   }
-  const thisTicket = await db
-    .ref(`tickets/${uid}`)
-    .once("value")
-    .then((snap) => snap.val());
-  return {
-    props: {
-      ticketNum: +params.ticketNum,
-      displayName: thisTicket.name,
-      photoURL: thisTicket.photo,
-    },
-  };
 };

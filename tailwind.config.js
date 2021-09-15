@@ -5,6 +5,10 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
@@ -52,7 +56,7 @@ module.exports = {
         },
         gradientpulse: {
           "0%, 100%": {
-            opacity: "50%",
+            opacity: "30%",
           },
           "50%": {
             opacity: "100%",

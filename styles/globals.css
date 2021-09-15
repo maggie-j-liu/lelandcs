@@ -7,4 +7,32 @@
     transform-origin: top right;
     transform: rotate(90deg) translateX(100%);
   }
+
+  .gradient {
+    @apply bg-gradient-to-r from-fuchsia to-blue pb-3 -mb-3 bg-clip-text text-transparent;
+  }
+
+  @responsive {
+    .ticket-vars {
+      --height: calc(var(--width) * 9 / 20);
+      --circle-width: calc(var(--width) / 16);
+      --circle-height: calc(var(--width) / 8);
+    }
+    .ticket-xxs {
+      --width: 15rem;
+      --border: 2px;
+    }
+    .ticket-xs {
+      --width: 20rem;
+      --border: 3px;
+    }
+    .ticket-sm {
+      --width: 30rem;
+      --border: 4px;
+    }
+    .ticket {
+      --width: 40rem;
+      --border: 4px;
+    }
+  }
 }

@@ -7,11 +7,10 @@ const GradientTitle = ({
 }) => {
   return (
     <div className={"relative"}>
-      <span className={"absolute inset-0"} aria-hidden={true}>
-        {text}
-      </span>
+      <span className={"absolute inset-0"}>{text}</span>
       <div
-        className={`relative mx-auto w-max bg-gradient-to-r from-fuchsia to-blue pb-3 -mb-3 bg-clip-text text-transparent ${transitionClass}`}
+        className={`relative mx-auto w-max gradient ${transitionClass} select-none`}
+        aria-hidden={true}
       >
         {text}
       </div>

@@ -20,8 +20,7 @@ export default async function handler(
     .catch((e) => res.status(400).send("invalid id token"));
   const ticketNum = await db
     .ref(`tickets/${uid}/number`)
-    .once("value", (snap) => {
-      snap.val();
-    });
+    .once("value")
+    .then((snap) => snap.val());
   res.status(200).json(ticketNum);
 }

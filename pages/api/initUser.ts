@@ -38,6 +38,7 @@ export default async function handler(
       photo: photo ?? `https://robohash.org/${uid}?set=set4`,
       number: ticketNum,
     },
+    [`ticketToId/${ticketNum}`]: uid,
   });
   res.status(200).send("Success");
 }

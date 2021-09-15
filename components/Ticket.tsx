@@ -1,21 +1,15 @@
-import firebase from "@/utils/firebase";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-const Ticket = ({ user }: { user: firebase.User }) => {
-  const [ticketNumber, setTicketNumber] = useState<null | string>(null);
-  useEffect(() => {
-    const getNumber = async () => {
-      const { token } = await user.getIdTokenResult();
-      const ticketNum = await fetch("/api/ticketNumber", {
-        method: "POST",
-        body: JSON.stringify({
-          idToken: token,
-        }),
-      }).then((res) => res.json());
-      setTicketNumber(("" + JSON.parse(ticketNum)).padStart(6, "0"));
-    };
-    getNumber();
-  }, [user]);
+const Ticket = ({
+  photoURL,
+  displayName,
+  ticketNum,
+  bgColor,
+}: {
+  photoURL: string;
+  displayName: string;
+  ticketNum: string | null;
+  bgColor: string;
+}) => {
   return (
     <div
       className={
@@ -28,9 +22,7 @@ const Ticket = ({ user }: { user: firebase.User }) => {
         }
       >
         <div
-          className={
-            "w-[var(--circle-width)] h-[calc(var(--circle-height)-2*var(--border))] bg-gray-800 translate-x-[calc(-1*var(--border))] rounded-r-full"
-          }
+          className={`w-[var(--circle-width)] h-[calc(var(--circle-height)-2*var(--border))] ${bgColor} translate-x-[calc(-1*var(--border))] rounded-r-full`}
         />
       </div>
       <div
@@ -39,9 +31,7 @@ const Ticket = ({ user }: { user: firebase.User }) => {
         }
       >
         <div
-          className={
-            "w-[calc(var(--circle-width)-var(--border))] h-[calc(var(--circle-height)-2*var(--border))] bg-gray-800 translate-x-[var(--border)] rounded-l-full"
-          }
+          className={`w-[calc(var(--circle-width)-var(--border))] h-[calc(var(--circle-height)-2*var(--border))] ${bgColor} translate-x-[var(--border)] rounded-l-full`}
         />
       </div>
       <div className={"relative h-full"}>
@@ -56,14 +46,10 @@ const Ticket = ({ user }: { user: firebase.User }) => {
                 "w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full overflow-hidden relative border md:border-2 border-fuchsia-400"
               }
             >
-              <Image
-                src={user.photoURL as string}
-                layout="fill"
-                objectFit="contain"
-              />
+              <Image src={photoURL} layout="fill" objectFit="contain" />
             </div>
             <h3 className={"text-xs xs:text-base md:text-3xl font-semibold"}>
-              {user.displayName}
+              {displayName}
             </h3>
           </div>
           <div className={"relative"}>
@@ -144,7 +130,7 @@ const Ticket = ({ user }: { user: firebase.User }) => {
               "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-medium font-mono"
             }
           >
-            {ticketNumber !== null && `#${ticketNumber}`}
+            {ticketNum !== null && `#${ticketNum}`}
           </div>
         </div>
       </div>

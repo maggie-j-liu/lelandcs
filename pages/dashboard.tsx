@@ -1,5 +1,5 @@
 import DashboardCard from "@/components/DashboardCard";
-import Ticket from "@/components/Ticket";
+import TicketFromUser from "@/components/TicketFromUser";
 import useUser from "@/utils/useUser";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ const Dashboard = () => {
         <div className={"space-y-4 mt-4"}>
           <DashboardCard>
             <h2 className={"text-3xl font-medium mb-4"}>Your Ticket</h2>
-            <Ticket user={user} />
+            <TicketFromUser user={user} bgColor={"bg-gray-800"} />
           </DashboardCard>
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <div className={"my-12"}>
-          <h1
+          <div
             className={
               "px-8 sm:px-12 md:px-24 text-center text-7xl sm:text-8xl md:text-9xl font-black space-y-4 mb-8"
             }
@@ -21,7 +21,7 @@ export default function Home() {
             <GradientTitle text={"Learn."} transitionClass={"animate-title1"} />
             <GradientTitle text={"Hack."} transitionClass={"animate-title2"} />
             <GradientTitle text={"Ship."} transitionClass={"animate-title3"} />
-          </h1>
+          </div>
           <h2 className={"text-2xl sm:text-3xl text-center"}>
             Leland Computer Science Club.
           </h2>

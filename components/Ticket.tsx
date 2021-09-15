@@ -4,7 +4,7 @@ const Ticket = ({ user }: { user: firebase.User }) => {
   return (
     <div
       className={
-        "relative ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket ticket-vars w-[var(--width)] h-[var(--height)] bg-gray-900 border-[length:var(--border)] border-fuchsia"
+        "rounded-md relative ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket ticket-vars w-[var(--width)] h-[var(--height)] bg-gray-900 border-[length:var(--border)] border-fuchsia"
       }
     >
       <div

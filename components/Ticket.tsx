@@ -1,6 +1,21 @@
 import firebase from "@/utils/firebase";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 const Ticket = ({ user }: { user: firebase.User }) => {
+  const [ticketNumber, setTicketNumber] = useState<null | string>(null);
+  useEffect(() => {
+    const getNumber = async () => {
+      const { token } = await user.getIdTokenResult();
+      const ticketNum = await fetch("/api/ticketNumber", {
+        method: "POST",
+        body: JSON.stringify({
+          idToken: token,
+        }),
+      }).then((res) => res.json());
+      setTicketNumber(("" + JSON.parse(ticketNum)).padStart(6, "0"));
+    };
+    getNumber();
+  }, [user]);
   return (
     <div
       className={
@@ -129,7 +144,7 @@ const Ticket = ({ user }: { user: firebase.User }) => {
               "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-medium font-mono"
             }
           >
-            #000000
+            {ticketNumber !== null && `#${ticketNumber}`}
           </div>
         </div>
       </div>

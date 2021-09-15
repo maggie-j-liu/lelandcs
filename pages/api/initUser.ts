@@ -18,10 +18,26 @@ export default async function handler(
     .verifyIdToken(idToken)
     .then((decodedToken) => decodedToken.uid)
     .catch((e) => res.status(400).send("invalid id token"));
-  await db.ref(`users/${uid}`).set({
-    name: name ?? "",
-    email: email ?? "",
-    photo: photo ?? `https://robohash.org/${uid}?set=set4`,
+  let ticketNum = 0;
+  await db.ref("ticketCount").transaction(
+    (curr) => {
+      return (curr || 0) + 1;
+    },
+    (_, __, snap) => {
+      ticketNum = snap?.val() - 1;
+    }
+  );
+  await db.ref().update({
+    [`users/${uid}`]: {
+      name: name ?? "",
+      email: email ?? "",
+      photo: photo ?? `https://robohash.org/${uid}?set=set4`,
+    },
+    [`tickets/${uid}`]: {
+      name: name ?? "",
+      photo: photo ?? `https://robohash.org/${uid}?set=set4`,
+      number: ticketNum,
+    },
   });
   res.status(200).send("Success");
 }

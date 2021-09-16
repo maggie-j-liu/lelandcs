@@ -1,4 +1,4 @@
 export const SITE_URL =
   process.env.NODE_ENV === "production"
-    ? "http://localhost:3000"
-    : "https://lelandcs.vercel.app";
+    ? "https://lelandcs.vercel.app"
+    : "http://localhost:3000";

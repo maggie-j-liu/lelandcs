@@ -3,6 +3,7 @@ import formatTicketNum from "@/utils/formatTicketNum";
 import { useEffect, useState } from "react";
 import Ticket from "./Ticket";
 import Link from "next/link";
+import useTicketNum from "@/utils/useTicketNum";
 const TicketFromUser = ({
   user,
   bgColor,
@@ -13,6 +14,7 @@ const TicketFromUser = ({
   link: boolean;
 }) => {
   const [ticketNumber, setTicketNumber] = useState<null | string>(null);
+  const { setNum } = useTicketNum();
   useEffect(() => {
     const getNumber = async () => {
       const { token } = await user.getIdTokenResult();
@@ -23,6 +25,7 @@ const TicketFromUser = ({
         }),
       }).then((res) => res.json());
       setTicketNumber(formatTicketNum(JSON.parse(ticketNum)));
+      setNum(JSON.parse(ticketNum));
     };
     getNumber();
   }, [user]);

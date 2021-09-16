@@ -12,6 +12,17 @@
     @apply bg-gradient-to-r from-fuchsia to-blue pb-3 -mb-3 bg-clip-text text-transparent;
   }
 
+  .dashed-underline {
+    text-decoration-style: dashed;
+    text-decoration-color: theme(colors.gray.400);
+  }
+}
+
+@layer components {
+  .ticket-button {
+    @apply flex-1 flex items-center justify-center rounded-lg text-xs sm:text-base md:text-lg font-light bg-transparent border sm:border-2 border-fuchsia pl-2 sm:pl-3 md:pl-4 py-1.5 xs:py-2 md:py-3 text-white;
+  }
+
   @responsive {
     .ticket-vars {
       --height: calc(var(--width) * 9 / 20);

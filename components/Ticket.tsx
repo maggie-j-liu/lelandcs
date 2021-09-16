@@ -54,7 +54,12 @@ const Ticket = ({
                   "w-6 h-6 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-16 md:h-16 rounded-full overflow-hidden relative border md:border-2 border-fuchsia-400"
                 }
               >
-                <Image src={photoURL} layout="fill" objectFit="contain" />
+                <Image
+                  src={photoURL}
+                  layout="fill"
+                  objectFit="contain"
+                  alt={`${displayName}'s profile picture`}
+                />
               </div>
               <h3 className={"text-xs xs:text-base md:text-3xl font-semibold"}>
                 {displayName}

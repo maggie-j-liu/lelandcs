@@ -1,4 +1,5 @@
 import DashboardCard from "@/components/DashboardCard";
+import TicketCard from "@/components/TicketCard";
 import TicketFromUser from "@/components/TicketFromUser";
 import useUser from "@/utils/useUser";
 import Link from "next/link";
@@ -19,10 +20,7 @@ const Dashboard = () => {
         <h2 className={"text-lg"}>👋 Hi, {user.displayName}!</h2>
         <button onClick={() => logout()}>Sign Out</button>
         <div className={"space-y-4 mt-4"}>
-          <DashboardCard>
-            <h2 className={"text-3xl font-medium mb-4"}>Your Ticket</h2>
-            <TicketFromUser user={user} bgColor={"bg-gray-800"} link={true} />
-          </DashboardCard>
+          <TicketCard user={user} />
         </div>
       </div>
     </main>

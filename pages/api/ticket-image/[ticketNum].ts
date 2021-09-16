@@ -8,6 +8,10 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { ticketNum } = req.query;
+  const maxTicket = await db
+    .ref("ticketCount")
+    .once("value")
+    .then((snap) => snap.val());
   /*
   const ticketInfo = await getTicket(ticketNum as string, false);
   if (ticketInfo.invalid || ticketInfo.notFound) {

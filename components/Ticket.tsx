@@ -37,7 +37,7 @@ const Ticket = ({
       <div className={"relative h-full"}>
         <div
           className={
-            "flex flex-col justify-between px-5 xs:px-7 sm:px-10 md:px-14 py-2 xs:py-4 sm:py-6 md:py-8 h-full"
+            "flex flex-col justify-between pl-5 xs:pl-7 sm:pl-12 md:pl-14 pr-[calc(1rem+var(--circle-width)+var(--circle-height))] py-2 xs:py-4 sm:py-6 md:py-8 h-full"
           }
         >
           <div className={"flex items-center gap-x-1 xs:gap-x-2 md:gap-x-4"}>
@@ -52,6 +52,11 @@ const Ticket = ({
               {displayName}
             </h3>
           </div>
+          <hr
+            className={
+              "hidden sm:block border-2 border-dashed border-gray-600 mx-10 md:mx-14"
+            }
+          />
           <div className={"relative"}>
             <span
               className={
@@ -108,7 +113,7 @@ const Ticket = ({
             </div>
             <p
               className={
-                "text-[0.4rem] xs:text-[0.5rem] sm:text-xs md:text-sm text-gray-200 font-light sm:mt-2 font-mono"
+                "text-[0.4rem] xs:text-[0.5rem] sm:text-xs md:text-sm text-gray-200 sm:mt-2 font-mono"
               }
             >
               Leland Computer Science Club
@@ -127,7 +132,7 @@ const Ticket = ({
         >
           <div
             className={
-              "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-mono"
+              "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-mono font-medium"
             }
           >
             {ticketNum !== null && `#${ticketNum}`}

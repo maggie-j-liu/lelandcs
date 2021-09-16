@@ -1,3 +1,4 @@
+// https://www.contentful.com/blog/2021/03/17/puppeteer-node-open-graph-screenshot-for-socials/
 import puppeteer from "puppeteer-core";
 import chrome from "chrome-aws-lambda";
 

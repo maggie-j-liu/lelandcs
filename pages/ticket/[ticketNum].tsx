@@ -20,6 +20,7 @@ const TicketNum = ({
           property="og:image"
           content={`${SITE_URL}/api/ticket-image/${ticketNum}`}
         />
+        <meta name="twitter:card" content={"summary_large_image"} />
       </Head>
       <div className={"w-full h-screen flex justify-center items-center"}>
         <div className="ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket-md lg:ticket-lg">

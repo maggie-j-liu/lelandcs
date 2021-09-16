@@ -22,22 +22,31 @@ export default function Home() {
             <GradientTitle text={"Hack."} transitionClass={"animate-title2"} />
             <GradientTitle text={"Ship."} transitionClass={"animate-title3"} />
           </div>
-          <h2 className={"text-2xl sm:text-3xl text-center"}>
+          <h2
+            className={
+              "font-mono xs:text-xl sm:text-2xl md:text-3xl text-center mb-1"
+            }
+          >
             Leland Computer Science Club.
           </h2>
           <div
             className={
-              "flex flex-col lg:flex-row items-center justify-center gap-x-3 text-xl lg:text-2xl px-8 sm:px-12 md:px-24"
+              "flex flex-col lg:flex-row items-center justify-center gap-x-3 text-sm xs:text-base sm:text-xl md:text-2xl px-8 sm:px-12 md:px-24"
             }
           >
-            <div>Mondays 3:30 - 4:30 @ F-2</div>{" "}
-            <div className={"hidden lg:block"}> &bull; </div>
-            <div className={"block lg:hidden"}> ~ </div>
-            <div>Wednesdays 3:30 - 4:30 @ E-8</div>
+            <div>
+              <span className={"font-semibold"}>Mondays</span> 3:30 - 4:30 @ F-2
+            </div>{" "}
+            <div className={"hidden lg:block"}>&bull;</div>
+            <div className={"block lg:hidden leading-none"}>~</div>
+            <div>
+              <span className={"font-semibold"}>Wednesdays</span> 3:30 - 4:30 @
+              E-8
+            </div>
           </div>
           <h2
             className={
-              "vertical-text font-medium w-max text-2xl sm:text-3xl md:text-4xl text-center fixed right-4 top-4"
+              "font-mono hidden xs:block vertical-text font-medium w-max text-2xl sm:text-3xl md:text-4xl text-center fixed right-4 top-4"
             }
           >
             Leland Computer Science Club

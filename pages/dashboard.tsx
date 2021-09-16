@@ -19,18 +19,20 @@ const Dashboard = () => {
           <a className={"text-gray-300 hover:text-blue-200"}>&larr; Home</a>
         </Link>
         <div className={"flex justify-between items-center mt-4"}>
-          <h1 className={"text-4xl font-bold mt-2"}>Dashboard</h1>
+          <h1 className={"text-2xl xs:text-4xl font-bold mt-2"}>Dashboard</h1>
           <button
             onClick={() => {
               logout();
               router.push("/");
             }}
-            className={"bg-gray-700 hover:bg-gray-600 px-4 py-1.5 rounded-md"}
+            className={
+              "text-sm xs:text-base bg-gray-700 hover:bg-gray-600 px-2 xs:px-4 py-1.5 rounded-md"
+            }
           >
             Sign Out
           </button>
         </div>
-        <h2 className={"text-lg mt-2"}>
+        <h2 className={"xs:text-lg mt-2"}>
           👋 Hi, {user.displayName}! Welcome to{" "}
           <span className={"font-mono gradient"}>
             Leland Computer Science Club

@@ -25,12 +25,12 @@ const TicketNum = ({
       </Head>
       <div
         className={
-          "w-full h-screen flex flex-col justify-center items-center gap-8"
+          "w-full h-screen flex flex-col justify-center items-center gap-8 p-8"
         }
       >
         <div
           className={
-            "relative font-mono text-4xl max-w-lg text-center font-semibold"
+            "relative font-mono text-2xl sm:text-4xl max-w-lg text-center font-semibold"
           }
         >
           <h1 className={"z-10 relative "}>

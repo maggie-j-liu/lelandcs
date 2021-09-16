@@ -15,7 +15,11 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
   }, [copied]);
   return (
     <DashboardCard>
-      <h2 className={"text-3xl font-semibold mb-10 underline dashed-underline"}>
+      <h2
+        className={
+          "text-3xl font-semibold mb-6 xs:mb-8 sm:mb-10 underline dashed-underline"
+        }
+      >
         Your Ticket
       </h2>
       <div className={"flex justify-center"}>

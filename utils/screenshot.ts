@@ -48,7 +48,10 @@ const screenshot = async (url: string) => {
   });
 
   // tell the page to visit the url
-  await page.goto(url, { waitUntil: "networkidle0" });
+  await page.goto(url, {
+    waitUntil:
+      process.env.NODE_ENV === "development" ? "networkidle2" : "networkidle0",
+  });
 
   // take a screenshot
   const file = await page.screenshot({

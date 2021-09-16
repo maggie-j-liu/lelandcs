@@ -26,16 +26,28 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
           "mt-4 sm:mt-8 sm:w-full flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-8 w-28 xs:w-32 sm:max-w-xs md:max-w-md mx-auto"
         }
       >
-        <a
-          className={"ticket-button"}
-          href={num !== null ? `/api/ticket-image/${num}` : "#"}
-          download={num !== null ? "leland-cs-ticket.png" : false}
-        >
-          <FiDownloadCloud />
-          <span className={"mx-auto"}>Download</span>
-        </a>
+        {num === null ? (
+          <button
+            className={"ticket-button brightness-[60%] cursor-not-allowed"}
+            disabled
+          >
+            <FiDownloadCloud />
+            <span className={"mx-auto"}>Download</span>
+          </button>
+        ) : (
+          <a
+            className={"ticket-button"}
+            href={`/api/ticket-image/${num}`}
+            download={"leland-cs-ticket.png"}
+          >
+            <FiDownloadCloud />
+            <span className={"mx-auto"}>Download</span>
+          </a>
+        )}
         <button
-          className={"ticket-button"}
+          className={`ticket-button ${
+            num === null ? "brightness-[60%] cursor-not-allowed" : ""
+          }`}
           onClick={() => {
             navigator.clipboard.writeText(`${SITE_URL}/ticket/${num}`);
             setCopied(true);

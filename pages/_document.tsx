@@ -11,7 +11,11 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className={"bg-gray-900 text-white selection:bg-fuchsia"}>
+        <body
+          className={
+            "bg-gray-900 text-white selection:bg-fuchsia selection:text-white"
+          }
+        >
           <Main />
           <NextScript />
         </body>

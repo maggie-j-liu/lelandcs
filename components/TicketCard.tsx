@@ -17,7 +17,7 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
     <DashboardCard>
       <h2
         className={
-          "text-3xl font-semibold mb-6 xs:mb-8 sm:mb-10 underline dashed-underline"
+          "text-3xl font-semibold mb-6 xs:mb-8 sm:mb-10 gradient-border border-b-2 w-max"
         }
       >
         Your Ticket

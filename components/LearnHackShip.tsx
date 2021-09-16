@@ -2,12 +2,16 @@ import GlowTitle from "./GlowTitle";
 
 const LearnHackShip = () => {
   return (
-    <div className={"space-y-12"}>
+    <div
+      className={
+        "space-y-12 pl-6 pr-8 xs:pr-14 sm:pr-16 md:pr-20 lg:pr-6 max-w-4xl mx-auto"
+      }
+    >
       <div>
-        <GlowTitle as="h2" className={"text-6xl font-bold mb-4"}>
+        <GlowTitle as="h2" className={"homepage-heading"}>
           Learn. 🔮
         </GlowTitle>
-        <p className={"text-xl max-w-4xl"}>
+        <p className={"homepage-paragraph"}>
           No prior experience needed. You’ll learn everything you need to know
           to make a great project. From{" "}
           <span className={"border-b-2 gradient-border border-dashed"}>
@@ -21,10 +25,10 @@ const LearnHackShip = () => {
         </p>
       </div>
       <div>
-        <GlowTitle as="h2" className={"text-6xl font-bold mb-4"}>
+        <GlowTitle as="h2" className={"homepage-heading"}>
           Hack. 🧑‍💻
         </GlowTitle>
-        <p className={"text-xl max-w-4xl"}>
+        <p className={"homepage-paragraph"}>
           Hack together projects, not banks! After you learn the basics, it’s
           time to get{" "}
           <span className={"light-gradient font-medium"}>hacking*</span>! With
@@ -48,10 +52,10 @@ const LearnHackShip = () => {
         </p>
       </div>
       <div>
-        <GlowTitle as="h2" className={"text-6xl font-bold mb-4"}>
+        <GlowTitle as="h2" className={"homepage-heading"}>
           Ship. 🚀
         </GlowTitle>
-        <p className={"text-xl max-w-4xl"}>
+        <p className={"homepage-paragraph"}>
           Once you’ve made something you’re proud of, it’s time to{" "}
           <span className={"border-b-2 gradient-border border-dashed"}>
             ship it

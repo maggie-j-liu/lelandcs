@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
+import GlowTitle from "./GlowTitle";
 const Ticket = ({
   photoURL,
   displayName,
@@ -61,7 +62,11 @@ const Ticket = ({
                   alt={`${displayName}'s profile picture`}
                 />
               </div>
-              <h3 className={"text-xs xs:text-base md:text-3xl font-semibold"}>
+              <h3
+                className={
+                  "text-xs xs:text-base md:text-3xl font-semibold border-b-2 gradient-border"
+                }
+              >
                 {displayName}
               </h3>
             </div>
@@ -79,24 +84,14 @@ const Ticket = ({
               >
                 Learn. Hack. Ship.
               </span>
-              {[...Array(3)].map((_, idx) => (
-                <span
-                  className={
-                    "text-base xs:text-xl sm:text-2xl md:text-4xl font-semibold gradient absolute blur-sm select-none"
-                  }
-                  key={idx}
-                  aria-hidden={true}
-                >
-                  Learn. Hack. Ship.
-                </span>
-              ))}
-              <h4
+              <GlowTitle
+                as="h4"
                 className={
-                  "relative w-max text-base xs:text-xl sm:text-2xl md:text-4xl font-semibold"
+                  "text-base xs:text-xl sm:text-2xl md:text-4xl font-semibold"
                 }
               >
                 Learn. Hack. Ship.
-              </h4>
+              </GlowTitle>
               <div
                 className={
                   "flex flex-col md:flex-row text-[0.4rem] xs:text-[0.5rem] sm:text-xs md:text-sm font-medium"

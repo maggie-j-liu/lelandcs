@@ -34,7 +34,7 @@ const Dashboard = () => {
         </div>
         <h2 className={"xs:text-lg mt-2"}>
           👋 Hi, {user.displayName}! Welcome to{" "}
-          <span className={"font-mono gradient"}>
+          <span className={"font-mono light-gradient"}>
             Leland Computer Science Club
           </span>
           !

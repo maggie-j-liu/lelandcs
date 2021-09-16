@@ -25,9 +25,12 @@
       2;
   }
 
-  .dashed-underline {
-    text-decoration-style: dashed;
-    text-decoration-color: theme(colors.gray.400);
+  .homepage-heading {
+    @apply text-5xl xs:text-6xl font-bold mb-4;
+  }
+
+  .homepage-paragraph {
+    @apply xs:text-xl;
   }
 }
 

@@ -44,7 +44,7 @@ const LearnHackShip = () => {
         </p>
         <p className={"mt-2"}>
           <span className={"light-gradient font-medium"}>*hacking</span>: using
-          your creativity to put together a project
+          your creativity and ingenuity to put together a project
         </p>
       </div>
       <div>
@@ -56,8 +56,7 @@ const LearnHackShip = () => {
           <span className={"border-b-2 gradient-border border-dashed"}>
             ship it
           </span>
-          ! Show it to your friends, your parents, your neighbors, your dog, and
-          make sure they know how cool you are 😎.
+          ! Show it to your friends, your parents, and everyone else.
         </p>
       </div>
     </div>

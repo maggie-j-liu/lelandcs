@@ -28,7 +28,7 @@ const TicketFromUser = ({
       setNum(JSON.parse(ticketNum));
     };
     getNumber();
-  }, [user]);
+  }, [user, setNum]);
   if (link && ticketNumber !== null) {
     return (
       <Link href={`/ticket/${+ticketNumber}`}>

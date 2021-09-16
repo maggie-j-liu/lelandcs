@@ -42,8 +42,8 @@ const screenshot = async (url: string) => {
 
   // set the viewport size
   await page.setViewport({
-    width: 768,
-    height: 507,
+    width: 1051,
+    height: 550,
     deviceScaleFactor: 4,
   });
 

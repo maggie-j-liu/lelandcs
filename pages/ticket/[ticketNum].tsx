@@ -4,6 +4,7 @@ import formatTicketNum from "@/utils/formatTicketNum";
 import getTicket from "@/utils/getTicket";
 import Head from "next/head";
 import { SITE_URL } from "@/utils/constants";
+import Link from "next/link";
 const TicketNum = ({
   ticketNum,
   displayName,
@@ -22,7 +23,35 @@ const TicketNum = ({
         />
         <meta name="twitter:card" content={"summary_large_image"} />
       </Head>
-      <div className={"w-full h-screen flex justify-center items-center"}>
+      <div
+        className={
+          "w-full h-screen flex flex-col justify-center items-center gap-8"
+        }
+      >
+        <div
+          className={
+            "relative font-mono text-4xl max-w-lg text-center font-semibold"
+          }
+        >
+          <h1 className={"z-10 relative "}>
+            Join Leland Computer Science Club!
+          </h1>
+          {[...Array(2)].map((_, idx) => (
+            <span
+              className={"select-none absolute inset-0 gradient blur-sm"}
+              aria-hidden={true}
+              key={idx}
+            >
+              Join Leland Computer Science Club!
+            </span>
+          ))}
+          <span
+            className={"select-none absolute inset-0 gradient blur-md"}
+            aria-hidden={true}
+          >
+            Join Leland Computer Science Club!
+          </span>
+        </div>
         <div className="ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket-md lg:ticket-lg">
           <Ticket
             ticketNum={formatTicketNum(ticketNum)}
@@ -31,6 +60,11 @@ const TicketNum = ({
             bgColor={"bg-gray-900"}
           />
         </div>
+        <h2 className={"text-lg text-gray-400 font-medium font-mono"}>
+          <Link href={"/"}>
+            <a>{SITE_URL}</a>
+          </Link>
+        </h2>
       </div>
     </>
   );
@@ -54,7 +88,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   } else if (ticketInfo.notFound) {
     return {
       notFound: true,
-      revalidate: 60,
+      revalidate: 30,
     };
   } else {
     return {

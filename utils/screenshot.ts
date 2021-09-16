@@ -48,7 +48,7 @@ const screenshot = async (url: string) => {
   });
 
   // tell the page to visit the url
-  await page.goto(url);
+  await page.goto(url, { waitUntil: "networkidle0" });
 
   // take a screenshot
   const file = await page.screenshot({

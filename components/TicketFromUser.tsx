@@ -2,12 +2,15 @@ import firebase from "@/utils/firebase";
 import formatTicketNum from "@/utils/formatTicketNum";
 import { useEffect, useState } from "react";
 import Ticket from "./Ticket";
+import Link from "next/link";
 const TicketFromUser = ({
   user,
   bgColor,
+  link = false,
 }: {
   user: firebase.User;
   bgColor: string;
+  link: boolean;
 }) => {
   const [ticketNumber, setTicketNumber] = useState<null | string>(null);
   useEffect(() => {
@@ -23,6 +26,20 @@ const TicketFromUser = ({
     };
     getNumber();
   }, [user]);
+  if (link && ticketNumber !== null) {
+    return (
+      <Link href={`/ticket/${+ticketNumber}`}>
+        <a>
+          <Ticket
+            bgColor={bgColor}
+            photoURL={user.photoURL as string}
+            displayName={user.displayName as string}
+            ticketNum={ticketNumber}
+          />
+        </a>
+      </Link>
+    );
+  }
   return (
     <Ticket
       bgColor={bgColor}

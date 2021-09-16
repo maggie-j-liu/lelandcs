@@ -2,7 +2,6 @@ import DashboardCard from "@/components/DashboardCard";
 import TicketFromUser from "@/components/TicketFromUser";
 import useUser from "@/utils/useUser";
 import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 
 const Dashboard = () => {
   const { user, loading, logout } = useUser();
@@ -22,7 +21,7 @@ const Dashboard = () => {
         <div className={"space-y-4 mt-4"}>
           <DashboardCard>
             <h2 className={"text-3xl font-medium mb-4"}>Your Ticket</h2>
-            <TicketFromUser user={user} bgColor={"bg-gray-800"} />
+            <TicketFromUser user={user} bgColor={"bg-gray-800"} link={true} />
           </DashboardCard>
         </div>
       </div>

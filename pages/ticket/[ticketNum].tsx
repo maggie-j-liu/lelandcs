@@ -5,6 +5,7 @@ import getTicket from "@/utils/getTicket";
 import Head from "next/head";
 import { SITE_URL } from "@/utils/constants";
 import Link from "next/link";
+import GlowTitle from "@/components/GlowTitle";
 const TicketNum = ({
   ticketNum,
   displayName,
@@ -28,30 +29,12 @@ const TicketNum = ({
           "w-full h-screen flex flex-col justify-center items-center gap-8 p-8"
         }
       >
-        <div
-          className={
-            "relative font-mono text-2xl sm:text-4xl max-w-lg text-center font-semibold"
-          }
+        <GlowTitle
+          as="h1"
+          className="font-mono text-2xl sm:text-4xl max-w-lg text-center font-semibold"
         >
-          <h1 className={"z-10 relative "}>
-            Join Leland Computer Science Club!
-          </h1>
-          {[...Array(2)].map((_, idx) => (
-            <span
-              className={"select-none absolute inset-0 gradient blur-sm"}
-              aria-hidden={true}
-              key={idx}
-            >
-              Join Leland Computer Science Club!
-            </span>
-          ))}
-          <span
-            className={"select-none absolute inset-0 gradient blur-md"}
-            aria-hidden={true}
-          >
-            Join Leland Computer Science Club!
-          </span>
-        </div>
+          Join Leland Computer Science Club!
+        </GlowTitle>
         <div className="ticket-xxs xs:ticket-xs sm:ticket-sm md:ticket-md lg:ticket-lg">
           <Ticket
             ticketNum={formatTicketNum(ticketNum)}

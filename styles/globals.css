@@ -12,6 +12,19 @@
     @apply bg-gradient-to-r from-fuchsia to-blue pb-3 -mb-3 bg-clip-text text-transparent;
   }
 
+  .light-gradient {
+    @apply bg-gradient-to-r from-fuchsia to-blue-400 text-transparent bg-clip-text;
+  }
+
+  .gradient-border {
+    border-image: linear-gradient(
+        to right,
+        theme(colors.fuchsia.DEFAULT),
+        theme(colors.blue.400)
+      )
+      2;
+  }
+
   .dashed-underline {
     text-decoration-style: dashed;
     text-decoration-color: theme(colors.gray.400);

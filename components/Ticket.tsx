@@ -127,7 +127,7 @@ const Ticket = ({
         >
           <div
             className={
-              "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-medium font-mono"
+              "-translate-x-1/2 text-base xs:text-lg sm:text-3xl md:text-4xl tracking-wider font-mono"
             }
           >
             {ticketNum !== null && `#${ticketNum}`}

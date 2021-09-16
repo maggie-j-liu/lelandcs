@@ -6,6 +6,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body className={"bg-gray-900 text-white selection:bg-fuchsia"}>
           <Main />

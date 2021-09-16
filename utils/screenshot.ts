@@ -1,34 +1,3 @@
-// https://www.contentful.com/blog/2021/03/17/puppeteer-node-open-graph-screenshot-for-socials/
-import chrome from "chrome-aws-lambda";
-import puppeteer from "puppeteer-core";
-
-export default async function screenshot(url: string) {
-  const options = process.env.AWS_REGION
-    ? {
-        args: chrome.args,
-        executablePath: await chrome.executablePath,
-        headless: chrome.headless,
-      }
-    : {
-        args: [],
-        executablePath:
-          process.platform === "win32"
-            ? "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-            : process.platform === "linux"
-            ? "/usr/bin/google-chrome"
-            : "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-      };
-  const browser = await puppeteer.launch(options);
-  const page = await browser.newPage();
-  await page.setViewport({
-    width: 720,
-    height: 450,
-    deviceScaleFactor: 8,
-  });
-  await page.goto(url, { waitUntil: "networkidle0" });
-  return await page.screenshot({ type: "png" });
-}
-/*
 import puppeteer from "puppeteer-core";
 import chrome from "chrome-aws-lambda";
 
@@ -72,9 +41,9 @@ const screenshot = async (url: string) => {
 
   // set the viewport size
   await page.setViewport({
-    width: 720,
-    height: 450,
-    deviceScaleFactor: 8,
+    width: 768,
+    height: 507,
+    deviceScaleFactor: 4,
   });
 
   // tell the page to visit the url
@@ -91,4 +60,3 @@ const screenshot = async (url: string) => {
 };
 
 export default screenshot;
-*/

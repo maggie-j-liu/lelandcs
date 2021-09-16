@@ -2,6 +2,7 @@ import DashboardCard from "@/components/DashboardCard";
 import TicketFromUser from "@/components/TicketFromUser";
 import useUser from "@/utils/useUser";
 import Link from "next/link";
+import Tilt from "react-parallax-tilt";
 
 const Dashboard = () => {
   const { user, loading, logout } = useUser();

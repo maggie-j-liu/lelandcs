@@ -15,6 +15,7 @@ export default async function handler(
     return;
   }
   const credentials = authHeader.split(" ")[1];
+  console.log(credentials);
   const decodedCredentials = Buffer.from(credentials, "base64").toString();
   if (
     decodedCredentials !==

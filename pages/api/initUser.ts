@@ -41,7 +41,7 @@ export default async function handler(
       name: name ?? "",
       email: email ?? "",
       photo: photo ?? `https://robohash.org/${uid}?set=set4`,
-      formSubmitted: hasSubmittedForm,
+      formSubmitted: !!hasSubmittedForm,
     },
     [`tickets/${uid}`]: {
       name: name ?? "",

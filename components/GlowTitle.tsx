@@ -11,7 +11,7 @@ const GlowTitle = ({
 }) => {
   const Tag = as;
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${className} w-max inline-block`}>
       <Tag className={"z-10 relative"}>{children}</Tag>
       {[...Array(2)].map((_, idx) => (
         <span

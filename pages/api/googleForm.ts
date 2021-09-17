@@ -12,7 +12,20 @@ export default async function handler(
   }
   const email = req.body["Email"].trim();
   const encodedEmail = encoder.encode(email);
-  console.log(req.headers.authorization);
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Basic ")) {
+    res.status(401).send("Unauthorized");
+    return;
+  }
+  const credentials = authHeader.split(" ")[1];
+  const decodedCredentials = new Buffer(credentials, "base64").toString();
+  if (
+    decodedCredentials !==
+    process.env.GOOGLE_FORM_USERNAME + ":" + process.env.GOOGLE_FORM_PASSWORD
+  ) {
+    res.status(401).send("Unauthorized");
+    return;
+  }
   let user = null;
   try {
     user = await auth.getUserByEmail(email);
@@ -32,6 +45,5 @@ export default async function handler(
       [`users/${user.uid}/formSubmitted`]: true,
     });
   }
-
   res.status(200).send("Success");
 }

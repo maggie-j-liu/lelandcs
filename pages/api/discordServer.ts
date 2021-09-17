@@ -15,23 +15,17 @@ export default async function handler(
     return;
   }
   const credentials = authHeader.split(" ")[1];
-  console.log(credentials);
   const decodedCredentials = Buffer.from(credentials, "base64").toString();
   if (
     decodedCredentials !==
     process.env.DISCORD_BOT_USERNAME + ":" + process.env.DISCORD_BOT_PASSWORD
   ) {
-    console.log(decodedCredentials);
-    console.log(
-      process.env.DISCORD_BOT_USERNAME + ":" + process.env.DISCORD_BOT_PASSWORD
-    );
     res.status(401).send("Unauthorized");
     return;
   }
-  const id = req.body.id;
-  console.log(id);
+  const { id, add } = req.body;
   await db.ref().update({
-    [`discordServerMembers/${id}`]: true,
+    [`discordServerMembers/${id}`]: add ? true : null,
   });
   res.status(200).send("Success");
 }

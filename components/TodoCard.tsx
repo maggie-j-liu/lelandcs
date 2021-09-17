@@ -57,6 +57,18 @@ const TodoCard = ({ user }: { user: firebase.User }) => {
             )}
           </li>
         )}
+        <li>
+          <span className={"mr-3 xs:mr-4 sm:mr-6"}>
+            Join our{" "}
+            <a
+              href="https://discord.gg/AFumZR2E"
+              className={"text-blue-200 hover:text-blue-300"}
+            >
+              discord server
+            </a>{" "}
+            !
+          </span>
+        </li>
       </ol>
     </DashboardCard>
   );

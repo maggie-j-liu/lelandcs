@@ -21,6 +21,10 @@ export default async function handler(
     decodedCredentials !==
     process.env.DISCORD_BOT_USERNAME + ":" + process.env.DISCORD_BOT_PASSWORD
   ) {
+    console.log(decodedCredentials);
+    console.log(
+      process.env.DISCORD_BOT_USERNAME + ":" + process.env.DISCORD_BOT_PASSWORD
+    );
     res.status(401).send("Unauthorized");
     return;
   }

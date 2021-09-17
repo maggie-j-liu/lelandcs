@@ -44,7 +44,7 @@ const screenshot = async (url: string) => {
   await page.setViewport({
     width: 1051,
     height: 550,
-    deviceScaleFactor: 4,
+    deviceScaleFactor: 2,
   });
 
   // tell the page to visit the url

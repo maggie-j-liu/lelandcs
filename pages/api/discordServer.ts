@@ -25,6 +25,7 @@ export default async function handler(
     return;
   }
   const id = req.body.id;
+  console.log(id);
   await db.ref().update({
     [`discordServerMembers/${id}`]: true,
   });

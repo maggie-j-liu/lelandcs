@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { db, auth } from "@/utils/admin";
+// @ts-ignore
+import encoder from "firebase-key-encode";
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,6 +13,7 @@ export default async function handler(
   }
   const body = JSON.parse(req.body);
   const { idToken, name, email, photo } = body;
+  const encodedEmail = encoder.encode(email);
   if (!idToken) {
     res.status(400).send("No idToken");
     return;
@@ -19,6 +22,11 @@ export default async function handler(
     .verifyIdToken(idToken)
     .then((decodedToken) => decodedToken.uid)
     .catch((e) => res.status(400).send("invalid id token"));
+
+  const hasSubmittedForm = await db
+    .ref(`googleFormSubmissions/${encodedEmail}`)
+    .once("value")
+    .then((snap) => snap.val());
   let ticketNum = 0;
   await db.ref("ticketCount").transaction(
     (curr) => {
@@ -33,6 +41,7 @@ export default async function handler(
       name: name ?? "",
       email: email ?? "",
       photo: photo ?? `https://robohash.org/${uid}?set=set4`,
+      formSubmitted: hasSubmittedForm,
     },
     [`tickets/${uid}`]: {
       name: name ?? "",

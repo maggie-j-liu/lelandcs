@@ -18,7 +18,7 @@ export default async function handler(
     return;
   }
   const credentials = authHeader.split(" ")[1];
-  const decodedCredentials = new Buffer(credentials, "base64").toString();
+  const decodedCredentials = Buffer.from(credentials, "base64").toString();
   if (
     decodedCredentials !==
     process.env.GOOGLE_FORM_USERNAME + ":" + process.env.GOOGLE_FORM_PASSWORD

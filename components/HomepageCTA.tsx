@@ -12,8 +12,8 @@ const HomepageCTA = () => {
         }
       >
         <GradientTitle text={"Learn."} transitionClass={"animate-title1"} />
-        <GradientTitle text={"Hack."} transitionClass={"animate-title2"} />
-        <GradientTitle text={"Ship."} transitionClass={"animate-title3"} />
+        <GradientTitle text={"Code."} transitionClass={"animate-title2"} />
+        <GradientTitle text={"Share."} transitionClass={"animate-title3"} />
       </div>
       <h2
         className={

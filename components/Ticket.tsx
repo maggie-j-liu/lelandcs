@@ -82,7 +82,7 @@ const Ticket = ({
                 }
                 aria-hidden={true}
               >
-                Learn. Hack. Ship.
+                Learn. Code. Share.
               </span>
               <GlowTitle
                 as="h4"
@@ -90,7 +90,7 @@ const Ticket = ({
                   "text-base xs:text-xl sm:text-2xl md:text-4xl font-semibold"
                 }
               >
-                Learn. Hack. Ship.
+                Learn. Code. Share.
               </GlowTitle>
               <div
                 className={

@@ -1,6 +1,6 @@
 import GradientTitle from "@/components/GradientTitle";
 import Head from "next/head";
-import LearnHackShip from "@/components/LearnHackShip";
+import LearnCodeShare from "@/components/LearnCodeShare";
 import HomepageCTA from "@/components/HomepageCTA";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
           <HomepageCTA />
         </section>
         <section className={"max-w-6xl mx-auto w-full"}>
-          <LearnHackShip />
+          <LearnCodeShare />
         </section>
       </main>
     </div>

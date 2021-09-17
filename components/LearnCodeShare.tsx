@@ -1,6 +1,6 @@
 import GlowTitle from "./GlowTitle";
 
-const LearnHackShip = () => {
+const LearnCodeShare = () => {
   return (
     <div
       className={
@@ -26,13 +26,12 @@ const LearnHackShip = () => {
       </div>
       <div>
         <GlowTitle as="h2" className={"homepage-heading"}>
-          Hack. 🧑‍💻
+          Code. 🧑‍💻
         </GlowTitle>
         <p className={"homepage-paragraph"}>
-          Hack together projects, not banks! After you learn the basics, it’s
-          time to get{" "}
+          After you learn the basics, it’s time to get{" "}
           <span className={"light-gradient font-medium"}>hacking*</span>! With
-          your new knowledge, you’ll be able to create something{" "}
+          your new knowledge, you’ll be able to code something{" "}
           <span className={"border-b-2 gradient-border border-dashed"}>
             innovative
           </span>
@@ -53,18 +52,18 @@ const LearnHackShip = () => {
       </div>
       <div>
         <GlowTitle as="h2" className={"homepage-heading"}>
-          Ship. 🚀
+          Share. 🚀
         </GlowTitle>
         <p className={"homepage-paragraph"}>
           Once you’ve made something you’re proud of, it’s time to{" "}
           <span className={"border-b-2 gradient-border border-dashed"}>
             ship it
           </span>
-          ! Show it to your friends, your parents, and everyone else.
+          ! Share it with your friends, your parents, and everyone else.
         </p>
       </div>
     </div>
   );
 };
 
-export default LearnHackShip;
+export default LearnCodeShare;

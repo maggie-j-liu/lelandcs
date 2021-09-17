@@ -2205,6 +2205,13 @@ firebase-admin@^9.11.0:
     "@google-cloud/firestore" "^4.5.0"
     "@google-cloud/storage" "^5.3.0"
 
+firebase-key-encode@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/firebase-key-encode/-/firebase-key-encode-0.1.5.tgz#17bdd39922603c315771bf8b6be02f77a0167211"
+  integrity sha1-F73TmSJgPDFXcb+La+Avd6AWchE=
+  dependencies:
+    lodash "~4.16.2"
+
 firebase@^8.9.1:
   version "8.10.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-8.10.0.tgz#1794148de8f865b5e7f32c582fb343a4e2c68ca7"
@@ -3133,6 +3140,11 @@ lodash@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
+lodash@~4.16.2:
+  version "4.16.6"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.6.tgz#d22c9ac660288f3843e16ba7d2b5d06cca27d777"
+  integrity sha1-0iyaxmAojzhD4Wun0rXQbMon13c=
 
 long@^4.0.0:
   version "4.0.0"

@@ -1,5 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { db, auth } from "@/utils/admin";
+// @ts-ignore
+import encoder from "firebase-key-encode";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -9,6 +11,7 @@ export default async function handler(
     return;
   }
   const email = req.body["Email"].trim();
+  const encodedEmail = encoder.encode(email);
   console.log(req.headers.authorization);
   let user = null;
   try {
@@ -19,11 +22,11 @@ export default async function handler(
   }
   if (user === null) {
     db.ref("googleFormSubmissions").update({
-      email: true,
+      encodedEmail: true,
     });
   } else {
     db.ref().update({
-      [`googleFormSubmissions/${email}`]: true,
+      [`googleFormSubmissions/${encodedEmail}`]: true,
       [`users/${user.uid}/formSubmitted`]: true,
     });
   }

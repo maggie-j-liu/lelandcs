@@ -10,8 +10,6 @@ export default async function handler(
     res.redirect(303, "/404");
     return;
   }
-  const email = req.body["Email"].trim();
-  const encodedEmail = encoder.encode(email);
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Basic ")) {
     res.status(401).send("Unauthorized");
@@ -26,6 +24,9 @@ export default async function handler(
     res.status(401).send("Unauthorized");
     return;
   }
+
+  const email = req.body["Email"].trim();
+  const encodedEmail = encoder.encode(email);
   let user = null;
   try {
     user = await auth.getUserByEmail(email);

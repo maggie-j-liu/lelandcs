@@ -1,7 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { db, auth } from "@/utils/admin";
-// @ts-ignore
-import encoder from "firebase-key-encode";
+import { db } from "@/utils/admin";
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -11,43 +9,23 @@ export default async function handler(
     return;
   }
   console.log(req.body);
-  /*
-  const email = req.body["Email"].trim();
-  const encodedEmail = encoder.encode(email);
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Basic ")) {
     res.status(401).send("Unauthorized");
     return;
   }
-  
   const credentials = authHeader.split(" ")[1];
   const decodedCredentials = Buffer.from(credentials, "base64").toString();
   if (
     decodedCredentials !==
-    process.env.GOOGLE_FORM_USERNAME + ":" + process.env.GOOGLE_FORM_PASSWORD
+    process.env.DISCORD_BOT_USERNAME + ":" + process.env.DISCORD_BOT_PASSWORD
   ) {
     res.status(401).send("Unauthorized");
     return;
   }
-  let user = null;
-  try {
-    user = await auth.getUserByEmail(email);
-  } catch (e) {
-    console.log(e);
-    console.log("no user");
-  }
-  if (user === null) {
-    await db.ref("googleFormSubmissions").update({
-      [encodedEmail]: true,
-    });
-  } else {
-    console.log(user.uid);
-    console.log(encodedEmail);
-    await db.ref().update({
-      [`googleFormSubmissions/${encodedEmail}`]: true,
-      [`users/${user.uid}/formSubmitted`]: true,
-    });
-  }
-  */
+  const id = req.body.id;
+  await db.ref().update({
+    [`discordServerMembers/${id}`]: true,
+  });
   res.status(200).send("Success");
 }

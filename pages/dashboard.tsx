@@ -1,6 +1,7 @@
 import DashboardCard from "@/components/DashboardCard";
 import TicketCard from "@/components/TicketCard";
 import TicketFromUser from "@/components/TicketFromUser";
+import TodoCard from "@/components/TodoCard";
 import useUser from "@/utils/useUser";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -39,8 +40,9 @@ const Dashboard = () => {
           </span>
           !
         </h2>
-        <div className={"space-y-4 mt-4"}>
+        <div className={"space-y-6 mt-8"}>
           <TicketCard user={user} />
+          <TodoCard user={user} />
         </div>
       </div>
     </main>

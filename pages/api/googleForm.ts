@@ -8,7 +8,8 @@ export default async function handler(
     res.redirect(303, "/404");
     return;
   }
-  const body = JSON.parse(req.body);
-  console.log(body);
+  console.log(req.body);
+  //const body = JSON.parse(req.body);
+  //console.log(body);
   res.status(200).send("Success");
 }

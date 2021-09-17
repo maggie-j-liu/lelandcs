@@ -21,11 +21,13 @@ export default async function handler(
     console.log("no user");
   }
   if (user === null) {
-    db.ref("googleFormSubmissions").update({
-      encodedEmail: true,
+    await db.ref("googleFormSubmissions").update({
+      [encodedEmail]: true,
     });
   } else {
-    db.ref().update({
+    console.log(user.uid);
+    console.log(encodedEmail);
+    await db.ref().update({
       [`googleFormSubmissions/${encodedEmail}`]: true,
       [`users/${user.uid}/formSubmitted`]: true,
     });

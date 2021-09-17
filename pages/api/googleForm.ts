@@ -9,7 +9,8 @@ export default async function handler(
     return;
   }
   console.log(req.body);
-  const body = JSON.parse(req.body);
+  const body = req.body;
   console.log(body);
+  console.log(body.email);
   res.status(200).send("Success");
 }

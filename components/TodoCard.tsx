@@ -40,11 +40,12 @@ const TodoCard = ({ user }: { user: firebase.User }) => {
           <li className={submitted ? "line-through text-gray-300" : ""}>
             <span className={"mr-3 xs:mr-4 sm:mr-6"}>
               Fill out{" "}
-              <Link href="/">
-                <a className={"text-blue-200 hover:text-blue-300"}>
-                  this google form
-                </a>
-              </Link>{" "}
+              <a
+                href="https://forms.gle/vdmPEA6fdxqQ7mmR7"
+                className={"text-blue-200 hover:text-blue-300"}
+              >
+                this google form
+              </a>{" "}
               to sign up for the club.
             </span>
             {submitted ? (

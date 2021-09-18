@@ -26,7 +26,7 @@ const LearnCodeShare = () => {
       </div>
       <div>
         <GlowTitle as="h2" className={"homepage-heading"}>
-          Code. 🧑‍💻
+          Code. 💻
         </GlowTitle>
         <p className={"homepage-paragraph"}>
           After you learn the basics, it’s time to get{" "}

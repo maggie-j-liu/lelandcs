@@ -38,6 +38,24 @@ const Dashboard = () => {
           <span className={"font-mono light-gradient"}>
             Leland Computer Science Club
           </span>
+          ! Make sure to sign up by filling out{" "}
+          <a
+            className={
+              "border-b-2 hover:gradient-border border-blue-300 text-blue-200"
+            }
+            href={"https://forms.gle/vdmPEA6fdxqQ7mmR7"}
+          >
+            this form
+          </a>{" "}
+          and joining our{" "}
+          <a
+            className={
+              "border-b-2 hover:gradient-border border-blue-300 text-blue-200"
+            }
+            href="https://discord.gg/AFumZR2E"
+          >
+            Discord server
+          </a>
           !
         </h2>
         <div className={"space-y-6 mt-8"}>

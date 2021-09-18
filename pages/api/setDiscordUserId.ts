@@ -10,8 +10,8 @@ export default async function handler(
     return;
   }
   const body = JSON.parse(req.body);
-  const { idToken } = body;
-  if (!idToken) {
+  const { idToken, discordID } = body;
+  if (!idToken || discordID === undefined) {
     res.status(400).send("No idToken");
     return;
   }
@@ -19,9 +19,23 @@ export default async function handler(
     .verifyIdToken(idToken)
     .then((decodedToken) => decodedToken.uid)
     .catch((e) => res.status(400).send("invalid id token"));
-  const ticketNum = await db
-    .ref(`tickets/${uid}/number`)
+
+  if (discordID === "") {
+    await db.ref().update({
+      [`users/${uid}/discordUID`]: null,
+      [`users/${uid}/joinedServer`]: false,
+    });
+    res.status(200).send("Success");
+    return;
+  }
+  const inServer = await db
+    .ref(`discordServerMembers/${discordID}`)
     .once("value")
     .then((snap) => snap.val());
-  res.status(200).json({ ticketNum });
+  await db.ref().update({
+    [`users/${uid}/discordUID`]: discordID,
+    [`users/${uid}/joinedServer`]: !!inServer,
+    [`discordIDToUID/${discordID}`]: uid,
+  });
+  res.status(200).send("Success");
 }

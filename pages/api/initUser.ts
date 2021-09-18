@@ -42,6 +42,7 @@ export default async function handler(
       email: email ?? "",
       photo: photo ?? `https://robohash.org/${uid}?set=set4`,
       formSubmitted: !!hasSubmittedForm,
+      discordServerJoined: false,
     },
     [`tickets/${uid}`]: {
       name: name ?? "",

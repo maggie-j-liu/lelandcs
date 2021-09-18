@@ -10,7 +10,7 @@ export default async function handler(
     return;
   }
   const body = JSON.parse(req.body);
-  const { idToken } = body;
+  const { idToken, discordID } = body;
   if (!idToken) {
     res.status(400).send("No idToken");
     return;
@@ -19,9 +19,9 @@ export default async function handler(
     .verifyIdToken(idToken)
     .then((decodedToken) => decodedToken.uid)
     .catch((e) => res.status(400).send("invalid id token"));
-  const ticketNum = await db
-    .ref(`tickets/${uid}/number`)
+  const inServer = await db
+    .ref(`users/${uid}/joinedServer`)
     .once("value")
     .then((snap) => snap.val());
-  res.status(200).json({ ticketNum });
+  res.status(200).json(!!inServer);
 }

@@ -19,9 +19,9 @@ export default async function handler(
     .verifyIdToken(idToken)
     .then((decodedToken) => decodedToken.uid)
     .catch((e) => res.status(400).send("invalid id token"));
-  const ticketNum = await db
-    .ref(`tickets/${uid}/number`)
+  const discordUID = await db
+    .ref(`users/${uid}/discordUID`)
     .once("value")
     .then((snap) => snap.val());
-  res.status(200).json({ ticketNum });
+  res.status(200).json({ id: discordUID ?? false });
 }

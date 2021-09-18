@@ -18,7 +18,7 @@ const TicketFromUser = ({
   useEffect(() => {
     const getNumber = async () => {
       const { token } = await user.getIdTokenResult();
-      const ticketNum = await fetch("/api/ticketNumber", {
+      const { ticketNum } = await fetch("/api/ticketNumber", {
         method: "POST",
         body: JSON.stringify({
           idToken: token,

@@ -33,7 +33,10 @@ export default async function handler(
       [`discordServerMembers/${id}`]: add ? true : null,
       [`users/${linkedUser}/joinedServer`]: add,
     });
+  } else {
+    await db.ref().update({
+      [`discordServerMembers/${id}`]: add ? true : null,
+    });
   }
-
   res.status(200).send("Success");
 }

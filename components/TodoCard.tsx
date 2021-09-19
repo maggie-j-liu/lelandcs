@@ -18,34 +18,23 @@ const TodoCard = ({ user }: { user: firebase.User }) => {
   useEffect(() => {
     const getStatus = async () => {
       const { token } = await user.getIdTokenResult();
-      const status = await fetch("/api/formSubmissionStatus", {
+      const {
+        formSubmitted,
+        discordUID,
+        inServer: isInServer,
+      } = await fetch("/api/getInfo", {
         method: "POST",
         body: JSON.stringify({
           idToken: token,
+          info: "userStatus",
         }),
       }).then((res) => res.json());
-      setSubmitted(status);
+      setSubmitted(formSubmitted);
       setLoadingStatus(false);
-      const currentUID = (
-        await fetch("/api/getDiscordUserId", {
-          method: "POST",
-          body: JSON.stringify({
-            idToken: token,
-          }),
-        }).then((res) => res.json())
-      ).id;
-      console.log(currentUID);
-
-      if (currentUID) {
-        setUserId(currentUID);
+      if (discordUID) {
+        setUserId(discordUID);
       }
       setLoadingId(false);
-      const isInServer = await fetch("/api/userInServer", {
-        method: "POST",
-        body: JSON.stringify({
-          idToken: token,
-        }),
-      }).then((res) => res.json());
       setInServer(isInServer);
       setLoadingServerStatus(false);
     };

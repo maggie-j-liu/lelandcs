@@ -18,10 +18,11 @@ const TicketFromUser = ({
   useEffect(() => {
     const getNumber = async () => {
       const { token } = await user.getIdTokenResult();
-      const { ticketNum } = await fetch("/api/ticketNumber", {
+      const { ticketNumber: ticketNum } = await fetch("/api/getInfo", {
         method: "POST",
         body: JSON.stringify({
           idToken: token,
+          info: "ticketNumber",
         }),
       }).then((res) => res.json());
       setTicketNumber(formatTicketNum(JSON.parse(ticketNum)));

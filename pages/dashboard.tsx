@@ -1,11 +1,7 @@
-import DashboardCard from "@/components/DashboardCard";
 import SEO from "@/components/SEO";
 import TicketCard from "@/components/TicketCard";
-import TicketFromUser from "@/components/TicketFromUser";
 import TodoCard from "@/components/TodoCard";
-import { SITE_URL } from "@/utils/constants";
 import useUser from "@/utils/useUser";
-import { Head } from "next/document";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

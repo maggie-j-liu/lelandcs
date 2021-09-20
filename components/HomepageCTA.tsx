@@ -46,19 +46,19 @@ const HomepageCTA = () => {
       <div className={"px-8 sm:px-12 md:px-24"}>
         <div
           className={
-            "mt-8 gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
+            "gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
           }
         >
-          <div className={"relative"}>
+          <div className={"mt-8 relative"}>
             {loading ? (
-              <div className={"w-48 h-12"} />
+              <div className={"border-2 border-transparent w-48 h-12"} />
             ) : (
               <>
                 {user ? (
                   <Link href={"/dashboard"}>
                     <a
                       className={
-                        "text-xl sm:text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
+                        "border-2 border-transparent text-xl sm:text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
                       }
                     >
                       Get your ticket
@@ -67,7 +67,7 @@ const HomepageCTA = () => {
                 ) : (
                   <SignInButton
                     className={
-                      "text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
+                      "border-2 border-transparent text-xl sm:text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
                     }
                   >
                     Sign In
@@ -86,7 +86,7 @@ const HomepageCTA = () => {
               </>
             )}
           </div>
-          <div className={"relative"}>
+          <div className={"mt-8 relative"}>
             <Link href={"/tickets"}>
               <a
                 className={

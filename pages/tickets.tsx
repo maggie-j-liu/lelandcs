@@ -15,7 +15,9 @@ interface Ticket {
 const Tickets = ({ tickets }: { tickets: Ticket[] }) => {
   return (
     <div
-      className={"flex flex-col items-center justify-center w-full h-screen"}
+      className={
+        "flex flex-col items-center justify-center w-full overflow-hidden h-screen"
+      }
     >
       <div className={"px-12 mb-8"}>
         <GlowTitle

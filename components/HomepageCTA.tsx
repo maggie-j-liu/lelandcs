@@ -44,8 +44,12 @@ const HomepageCTA = () => {
         Leland Computer Science Club
       </h2>
       <div className={"px-8 sm:px-12 md:px-24"}>
-        <div className={"flex flex-col items-center text-xl"}>
-          <div className={"relative mt-8"}>
+        <div
+          className={
+            "mt-8 gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
+          }
+        >
+          <div className={"relative"}>
             {loading ? (
               <div className={"w-48 h-12"} />
             ) : (
@@ -54,7 +58,7 @@ const HomepageCTA = () => {
                   <Link href={"/dashboard"}>
                     <a
                       className={
-                        "text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
+                        "text-xl sm:text-2xl font-medium px-4 py-2 relative bg-white text-gray-900 rounded-md peer"
                       }
                     >
                       Get your ticket
@@ -81,6 +85,27 @@ const HomepageCTA = () => {
                 />
               </>
             )}
+          </div>
+          <div className={"relative"}>
+            <Link href={"/tickets"}>
+              <a
+                className={
+                  "text-xl sm:text-2xl font-medium px-4 py-2 relative text-white bg-gray-900 border-white border-2 rounded-md peer"
+                }
+              >
+                View tickets
+              </a>
+            </Link>
+            <div
+              className={
+                "absolute z-[-10] -inset-1 blur-md bg-gradient-to-r from-fuchsia to-blue backdrop-blur-3xl animate-pulse-gradient hover:animate-none peer-hover:animate-none hover:opacity-100 peer-hover:opacity-100"
+              }
+            />
+            <div
+              className={
+                "absolute z-[-10] -inset-1 blur-md bg-gradient-to-r from-fuchsia to-blue backdrop-blur-3xl opacity-75"
+              }
+            />
           </div>
         </div>
       </div>

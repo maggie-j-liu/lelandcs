@@ -5,6 +5,7 @@ import { FiCopy, FiDownloadCloud, FiCheckCircle } from "react-icons/fi";
 import useTicketNum from "@/utils/useTicketNum";
 import { SITE_URL } from "@/utils/constants";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 const TicketCard = ({ user }: { user: firebase.User }) => {
   const { num } = useTicketNum();
   const [copied, setCopied] = useState(false);
@@ -55,6 +56,11 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
           <span className={"mx-auto"}>{copied ? "Copied!" : "Copy Link"}</span>
         </button>
       </div>
+      <Link href="/tickets">
+        <a className={"group hover:gradient-border border-b-2"}>
+          View other tickets &rarr;
+        </a>
+      </Link>
     </DashboardCard>
   );
 };

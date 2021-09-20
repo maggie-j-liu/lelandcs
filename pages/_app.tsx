@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           title="Leland Computer Science Club"
           description="Learn. Code. Share. Join Leland Computer Science Club today!"
           author="Leland CS Club"
-          image="/lelandcs.png"
+          image="/ogimage.png"
           twitterCard="summary_large_image"
         />
         <Component {...pageProps} />

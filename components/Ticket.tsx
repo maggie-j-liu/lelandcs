@@ -5,12 +5,12 @@ const Ticket = ({
   photoURL,
   displayName,
   ticketNum,
-  bgColor,
+  bgColor = "bg-gray-900",
 }: {
   photoURL: string;
   displayName: string;
   ticketNum: string | null;
-  bgColor: string;
+  bgColor?: string;
 }) => {
   return (
     <Tilt
@@ -60,6 +60,7 @@ const Ticket = ({
                   layout="fill"
                   objectFit="contain"
                   alt={`${displayName}'s profile picture`}
+                  priority={true}
                 />
               </div>
               <h3

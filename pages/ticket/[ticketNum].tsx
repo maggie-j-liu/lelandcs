@@ -6,6 +6,7 @@ import Head from "next/head";
 import { SITE_URL } from "@/utils/constants";
 import Link from "next/link";
 import GlowTitle from "@/components/GlowTitle";
+import SEO from "@/components/SEO";
 const TicketNum = ({
   ticketNum,
   displayName,
@@ -17,13 +18,12 @@ const TicketNum = ({
 }) => {
   return (
     <>
-      <Head>
-        <meta
-          property="og:image"
-          content={`${SITE_URL}/api/ticket-image/${ticketNum}`}
-        />
-        <meta name="twitter:card" content={"summary_large_image"} />
-      </Head>
+      <SEO
+        title={`${displayName}'s Leland CS Club Ticket`}
+        description={`Join ${displayName} at Leland Computer Science Club.`}
+        image={`/api/ticket-image/${ticketNum}`}
+        url={`/ticket/${ticketNum}`}
+      />
       <div
         className={
           "w-full h-screen flex flex-col justify-center items-center gap-8 p-8"

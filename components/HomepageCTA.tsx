@@ -46,10 +46,10 @@ const HomepageCTA = () => {
       <div className={"px-8 sm:px-12 md:px-24"}>
         <div
           className={
-            "gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
+            "mt-8 gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
           }
         >
-          <div className={"mt-8 relative"}>
+          <div className={"relative"}>
             {loading ? (
               <div className={"border-2 border-transparent w-48 h-12"} />
             ) : (
@@ -86,7 +86,7 @@ const HomepageCTA = () => {
               </>
             )}
           </div>
-          <div className={"mt-8 relative"}>
+          <div className={"relative"}>
             <Link href={"/tickets"}>
               <a
                 className={

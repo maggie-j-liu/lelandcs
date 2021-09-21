@@ -60,7 +60,7 @@ const Tickets = ({ tickets }: { tickets: Ticket[] }) => {
 
 export default Tickets;
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async () => {
   const lastFewTickets = await db
     .ref("tickets")
     .orderByChild("number")

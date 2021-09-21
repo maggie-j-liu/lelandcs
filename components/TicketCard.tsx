@@ -57,7 +57,11 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
         </button>
       </div>
       <Link href="/tickets">
-        <a className={"group hover:gradient-border border-b-2"}>
+        <a
+          className={
+            "block w-max mt-4 text-sm sm:text-base group hover:gradient-border border-b-2"
+          }
+        >
           View other tickets &rarr;
         </a>
       </Link>

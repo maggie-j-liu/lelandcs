@@ -2,11 +2,7 @@ import GlowTitle from "./GlowTitle";
 
 const LearnCodeShare = () => {
   return (
-    <div
-      className={
-        "space-y-12 pl-6 pr-8 xs:pr-14 sm:pr-16 md:pr-20 lg:pr-6 max-w-4xl mx-auto"
-      }
-    >
+    <div className={"space-y-12 pl-6 pr-8 xs:pr-14 sm:pr-16 md:pr-20 lg:pr-6"}>
       <div>
         <GlowTitle as="h2" className={"homepage-heading"}>
           Learn. 🔮

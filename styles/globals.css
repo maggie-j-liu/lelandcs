@@ -28,6 +28,9 @@
   .homepage-heading {
     @apply text-5xl xs:text-6xl font-bold mb-4;
   }
+  .homepage-subheading {
+    @apply text-3xl xs:text-4xl font-semibold mb-4;
+  }
 
   .homepage-paragraph {
     @apply xs:text-xl;

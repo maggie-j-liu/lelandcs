@@ -57,7 +57,7 @@ const Dashboard = () => {
               className={
                 "border-b-2 hover:gradient-border border-blue-300 text-blue-200"
               }
-              href="https://discord.gg/AFumZR2E"
+              href="https://discord.gg/bVxW6B9yDt"
             >
               Discord server
             </a>

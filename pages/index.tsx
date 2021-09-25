@@ -35,9 +35,9 @@ export default function Home() {
               <span className={"font-medium"}>Discord Server:</span>{" "}
               <a
                 className={"gradient-border border-b-2"}
-                href="https://discord.gg/AFumZR2E"
+                href="https://discord.gg/bVxW6B9yDt"
               >
-                https://discord.gg/AFumZR2E
+                https://discord.gg/bVxW6B9yDt
               </a>
             </div>
             <div>

@@ -78,7 +78,7 @@ const TodoCard = ({ user }: { user: firebase.User }) => {
           <span className={"mr-3 xs:mr-4 sm:mr-6"}>
             Join our{" "}
             <a
-              href="https://discord.gg/AFumZR2E"
+              href="https://discord.gg/bVxW6B9yDt"
               className={"text-blue-200 hover:text-blue-300"}
             >
               discord server

@@ -33,6 +33,12 @@ module.exports = {
           "https://docs.google.com/forms/d/e/1FAIpQLSffNB1I2vv-ZaeB-MPPU_l34Z9FeaOq3U1POmpPfIp-5_ciDg/viewform",
         permanent: true,
       },
+      {
+        source: "/attendance",
+        destination:
+          "https://docs.google.com/forms/d/e/1FAIpQLSemT7wiaZiWuZoy1ZPbRJNDJ9-X6kPGVQoWpQEGutSRLSz1Yg/viewform",
+        permanent: true,
+      },
     ];
   },
 };

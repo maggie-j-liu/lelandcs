@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import SEO from "@/components/SEO";
 import TicketCard from "@/components/TicketCard";
 import TodoCard from "@/components/TodoCard";
@@ -19,6 +20,7 @@ const Dashboard = () => {
         description="View your ticket and next steps here."
         url="/dashboard"
       />
+      <Navbar />
       <main className={"px-6 xs:px-10 lg:px-12 xl:px-24 mt-20 mb-24"}>
         <div className={"w-full mx-auto max-w-5xl"}>
           <Link href={"/"}>

@@ -36,13 +36,6 @@ const HomepageCTA = () => {
           <span className={"font-semibold"}>Wednesdays</span> 3:30 - 4:30 @ E-8
         </div>
       </div>
-      <h2
-        className={
-          "font-mono hidden xs:block vertical-text font-medium w-max text-2xl sm:text-3xl md:text-4xl text-center fixed right-4 top-4"
-        }
-      >
-        Leland Computer Science Club
-      </h2>
       <div className={"px-8 sm:px-12 md:px-24"}>
         <div
           className={

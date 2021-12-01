@@ -1,4 +1,5 @@
 import GlowTitle from "./GlowTitle";
+import Link from "next/link";
 
 const LearnCodeShare = () => {
   return (
@@ -52,9 +53,15 @@ const LearnCodeShare = () => {
         </GlowTitle>
         <p className={"homepage-paragraph"}>
           Once you’ve made something you’re proud of, it’s time to{" "}
-          <span className={"border-b-2 gradient-border border-dashed"}>
-            ship it
-          </span>
+          <Link href="/projects">
+            <a
+              className={
+                "border-b-2 gradient-border border-dashed hover:light-gradient font-bold"
+              }
+            >
+              ship it
+            </a>
+          </Link>
           ! Share it with your friends, your parents, and everyone else.
         </p>
       </div>

@@ -1,15 +1,15 @@
-import GradientTitle from "@/components/GradientTitle";
-import Head from "next/head";
 import LearnCodeShare from "@/components/LearnCodeShare";
 import HomepageCTA from "@/components/HomepageCTA";
-import { SITE_URL } from "@/utils/constants";
 import SEO from "@/components/SEO";
 import GlowTitle from "@/components/GlowTitle";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <div>
       <SEO title="Leland Computer Science Club" url="" />
+
+      <Navbar />
       <main className={"space-y-24 mt-16 mb-24"}>
         <section>
           <HomepageCTA />
@@ -25,7 +25,9 @@ export default function Home() {
             <div>
               <span className={"font-medium"}>Registration form:</span>{" "}
               <a
-                className={"gradient-border border-b-2"}
+                className={
+                  "gradient-border border-b-2 font-bold hover:light-gradient"
+                }
                 href="https://forms.gle/aGxrYH3v7cGdDgxH6"
               >
                 https://forms.gle/aGxrYH3v7cGdDgxH6
@@ -34,7 +36,9 @@ export default function Home() {
             <div>
               <span className={"font-medium"}>Discord Server:</span>{" "}
               <a
-                className={"gradient-border border-b-2"}
+                className={
+                  "gradient-border border-b-2 font-bold hover:light-gradient"
+                }
                 href="https://discord.gg/bVxW6B9yDt"
               >
                 https://discord.gg/bVxW6B9yDt
@@ -43,7 +47,9 @@ export default function Home() {
             <div>
               <span className={"font-medium"}>Email:</span>{" "}
               <a
-                className={"gradient-border border-b-2"}
+                className={
+                  "gradient-border border-b-2 font-bold hover:light-gradient"
+                }
                 href="mailto:lelandcomputerscience@gmail.com"
               >
                 lelandcomputerscience@gmail.com

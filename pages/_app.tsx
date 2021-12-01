@@ -2,8 +2,6 @@ import "../styles/globals.css";
 import { UserContextProvider } from "@/utils/useUser";
 import { AppProps } from "next/app";
 import { TicketNumberContextProvider } from "@/utils/useTicketNum";
-import Head from "next/head";
-import { SITE_URL } from "@/utils/constants";
 import SEO from "@/components/SEO";
 
 function MyApp({ Component, pageProps }: AppProps) {

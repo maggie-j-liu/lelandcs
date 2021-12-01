@@ -29,17 +29,7 @@ const Project = ({
   );
 };
 
-const projectData: ProjectProps[] = [
-  {
-    imageSrc:
-      "https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png",
-    title: "test",
-    creatorName: "uwu",
-    description: "this is a test",
-    link: "https://google.com",
-    creatorLink: "https://replit.com",
-  },
-];
+const projectData: ProjectProps[] = [];
 
 const Projects = () => {
   return (
@@ -53,6 +43,11 @@ const Projects = () => {
           <p className="text-xl font-light mt-4">
             Projects created by our club members!
           </p>
+          {projectData.length == 0 && (
+            <div className="text-center my-16 text-2xl font-light">
+              No projects yet! Check back soon to see some cool creations.
+            </div>
+          )}
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {projectData.map((project) => (
               <Project

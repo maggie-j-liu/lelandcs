@@ -7,7 +7,9 @@ const LinkContext = createContext<string | null>(null);
 const Title = ({ children }: { children: ReactNode }) => {
   const link = useContext(LinkContext);
   if (!link) {
-    return <h3 className="text-white text-3xl font-semibold">{children}</h3>;
+    return (
+      <h3 className="text-white text-3xl font-semibold mb-2">{children}</h3>
+    );
   }
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">

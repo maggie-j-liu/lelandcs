@@ -53,6 +53,7 @@ const projectData: ProjectProps[] = [
     creators: [
       {
         name: "Tina",
+        link: "https://www.instagram.com/tina1383ram",
       },
     ],
     link: "https://mediumbluetriangularprogrammer.tinaramezani.repl.co",

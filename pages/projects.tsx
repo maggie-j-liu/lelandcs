@@ -15,6 +15,7 @@ export interface ProjectProps {
   creators: Creator[];
   description: string | ReactNode;
   link?: string;
+  code?: string;
 }
 
 const Projects = () => {
@@ -27,7 +28,7 @@ const Projects = () => {
             Projects
           </GlowTitle>
           <p className="text-xl font-light mt-4">
-            Projects created by our club members!
+            Projects created by our club members and from events we organized!
           </p>
           {projectData.length == 0 && (
             <div className="text-center my-16 text-2xl font-light">
@@ -36,8 +37,8 @@ const Projects = () => {
           )}
           <div className="mt-12 grid md:grid-cols-2 gap-8">
             {projectData.map(
-              ({ link, imageSrc, title, creators, description }) => (
-                <ProjectCard key={title + description} link={link}>
+              ({ link, imageSrc, title, creators, description, code }) => (
+                <ProjectCard key={title + description} link={link} code={code}>
                   <ProjectCard.Title>{title}</ProjectCard.Title>
                   <ProjectCard.Creators creators={creators} />
                   <p className="mt-4 mb-8">{description}</p>

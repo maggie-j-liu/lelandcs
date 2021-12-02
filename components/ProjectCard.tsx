@@ -1,33 +1,47 @@
 import { createContext, Fragment, ReactNode, useContext } from "react";
-import { Creator as CreatorType } from "pages/projects";
+import { Creator as CreatorType, ProjectProps } from "pages/projects";
 import { FiExternalLink } from "react-icons/fi";
+import { HiOutlineCode } from "react-icons/hi";
 
-const LinkContext = createContext<string | null>(null);
+type Links = Pick<ProjectProps, "link" | "code">;
+const LinkContext = createContext<Links>({
+  link: undefined,
+  code: undefined,
+});
 
 const Title = ({ children }: { children: ReactNode }) => {
-  const link = useContext(LinkContext);
-  if (!link) {
-    return (
-      <h3 className="text-white text-3xl font-semibold mb-2">{children}</h3>
-    );
-  }
+  const { link, code } = useContext(LinkContext);
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
       <h3 className="text-white text-3xl font-semibold">{children}</h3>
-      <a
-        href={link}
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center ml-auto gap-2 hover:border-b gradient-border"
-      >
-        <span className="font-light">visit </span>
-        <FiExternalLink className="inline w-5 h-5" />
-      </a>
+      {(link || code) && <span className="flex-grow" />}
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 hover:border-b gradient-border"
+        >
+          <span className="font-light">visit </span>
+          <FiExternalLink className="inline w-5 h-5" />
+        </a>
+      )}
+      {code && (
+        <a
+          href={code}
+          target="_blank"
+          rel="noreferrer"
+          className="flex items-center gap-2 hover:border-b gradient-border"
+        >
+          <span className="font-light">code </span>
+          <HiOutlineCode className="inline w-5 h-5" />
+        </a>
+      )}
     </div>
   );
 };
 
-const Creator = ({ name, link }: { name: string; link?: string }) => {
+const Creator = ({ name, link }: CreatorType) => {
   if (link) {
     return (
       <a
@@ -58,13 +72,11 @@ const Creators = ({ creators }: { creators: CreatorType[] }) => {
 };
 const ProjectCard = ({
   link,
+  code,
   children,
-}: {
-  link?: string;
-  children?: ReactNode;
-}) => {
+}: Links & { children?: ReactNode }) => {
   return (
-    <LinkContext.Provider value={link ?? null}>
+    <LinkContext.Provider value={{ link, code }}>
       <div className="relative group">
         <div className="blur absolute inset-0 bg-gradient-to-r from-fuchsia to-blue" />
         <div className="opacity-0 group-hover:opacity-100 group-hover:duration-150 duration-500 blur absolute inset-0 bg-gradient-to-r from-fuchsia to-blue" />

@@ -10,7 +10,7 @@ export interface Creator {
   link?: string;
 }
 export interface ProjectProps {
-  imageSrc: StaticImageData;
+  imageSrc?: StaticImageData;
   title: string;
   creators: Creator[];
   description: string | ReactNode;
@@ -42,7 +42,7 @@ const Projects = () => {
                   <ProjectCard.Title>{title}</ProjectCard.Title>
                   <ProjectCard.Creators creators={creators} />
                   <p className="mt-4 mb-8">{description}</p>
-                  <Image src={imageSrc} placeholder="blur" />
+                  {imageSrc && <Image src={imageSrc} placeholder="blur" />}
                 </ProjectCard>
               )
             )}

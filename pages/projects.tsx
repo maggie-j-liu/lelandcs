@@ -2,34 +2,20 @@ import GlowTitle from "@/components/GlowTitle";
 import ProjectCard from "@/components/ProjectCard";
 import { ReactNode } from "react";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
+import projectData from "data/projects";
 
-interface ProjectProps {
-  imageSrc: string;
+export interface Creator {
+  name: string;
+  link?: string;
+}
+export interface ProjectProps {
+  imageSrc: StaticImageData;
   title: string;
-  creatorName: string;
-  creatorLink?: string;
+  creators: Creator[];
   description: string | ReactNode;
   link?: string;
 }
-const Project = ({
-  imageSrc,
-  title,
-  creatorName,
-  creatorLink,
-  description,
-  link,
-}: ProjectProps) => {
-  return (
-    <ProjectCard link={link}>
-      <img className="mb-4" src={imageSrc} />
-      <ProjectCard.Title>{title}</ProjectCard.Title>
-      <ProjectCard.Creator name={creatorName} link={creatorLink} />
-      <p className="mt-4">{description}</p>
-    </ProjectCard>
-  );
-};
-
-const projectData: ProjectProps[] = [];
 
 const Projects = () => {
   return (
@@ -49,17 +35,16 @@ const Projects = () => {
             </div>
           )}
           <div className="mt-12 grid md:grid-cols-2 gap-8">
-            {projectData.map((project) => (
-              <Project
-                key={project.title}
-                link={project.link}
-                imageSrc={project.imageSrc}
-                title={project.title}
-                creatorName={project.creatorName}
-                creatorLink={project.creatorLink}
-                description={project.description}
-              />
-            ))}
+            {projectData.map(
+              ({ link, imageSrc, title, creators, description }) => (
+                <ProjectCard key={title + description} link={link}>
+                  <ProjectCard.Title>{title}</ProjectCard.Title>
+                  <ProjectCard.Creators creators={creators} />
+                  <p className="mt-4 mb-8">{description}</p>
+                  <Image src={imageSrc} placeholder="blur" />
+                </ProjectCard>
+              )
+            )}
           </div>
         </div>
       </main>

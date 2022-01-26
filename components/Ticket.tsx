@@ -104,37 +104,11 @@ const Ticket = ({
                       "font-semibold bg-gradient-to-r from-fuchsia to-blue-400 text-transparent bg-clip-text"
                     }
                   >
-                    Mondays
-                  </span>{" "}
-                  3:30 - 4:30 @ F-2
-                </p>
-                <span className={"hidden md:block mx-2"}>&bull;</span>
-                <p>
-                  <span
-                    className={
-                      "font-semibold bg-gradient-to-r from-fuchsia to-blue-400 text-transparent bg-clip-text"
-                    }
-                  >
                     Wednesdays
                   </span>{" "}
                   3:30 - 4:30 @ E-8
                 </p>
               </div>
-              <p
-                className={
-                  "text-[0.4rem] xs:text-[0.5rem] sm:text-xs md:text-sm"
-                }
-              >
-                First meeting on{" "}
-                <span
-                  className={
-                    "light-gradient text-[0.5rem] xs:text-[0.6rem] sm:text-sm md:text-base"
-                  }
-                >
-                  9/27
-                </span>{" "}
-                @ F-2
-              </p>
               <p
                 className={
                   "text-[0.4rem] xs:text-[0.5rem] sm:text-xs md:text-sm text-gray-200 sm:mt-2 font-mono"

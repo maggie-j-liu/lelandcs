@@ -28,11 +28,6 @@ const HomepageCTA = () => {
         }
       >
         <div>
-          <span className={"font-semibold"}>Mondays</span> 3:30 - 4:30 @ F-2
-        </div>{" "}
-        <div className={"hidden lg:block"}>&bull;</div>
-        <div className={"block lg:hidden leading-none"}>~</div>
-        <div>
           <span className={"font-semibold"}>Wednesdays</span> 3:30 - 4:30 @ E-8
         </div>
       </div>

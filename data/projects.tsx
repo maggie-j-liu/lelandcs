@@ -4,6 +4,7 @@ import morse_code from "./images/morse_code.jpeg";
 import baasil_website from "./images/baasil_website.jpg";
 import clothes_color_changer from "./images/clothes_color_changer.png";
 import parallax from "./images/parallax.png";
+import hungergame from "./images/hungergame.png";
 const projectData: ProjectProps[] = [
   {
     title: "A reinventing of the government: The Emoji Movie",
@@ -49,7 +50,7 @@ const projectData: ProjectProps[] = [
   },
   {
     title: "This is not the test",
-    description: "It’s mostly about the stories of my own experience",
+    description: "It's mostly about the stories of my own experience",
     creators: [
       {
         name: "Tina",
@@ -91,6 +92,22 @@ const projectData: ProjectProps[] = [
     ],
     link: "https://hackathon-project.chelseazhao1.repl.co",
     code: "https://replit.com/@ChelseaZhao1/hackathon-project",
+  },
+  {
+    title: "Hungergame.io",
+    description:
+      "Our project is a game where users can feed their avatars and answer trivia questions to learn more about world hunger. We made our interactive game using python.",
+    imageSrc: hungergame,
+    creators: [
+      {
+        name: "Ameya",
+      },
+      {
+        name: "Sophia",
+      },
+    ],
+    link: "https://replit.com/@SophiaHuang7/PapayawhipUnwrittenStructure#main.py",
+    code: "https://replit.com/@SophiaHuang7/PapayawhipUnwrittenStructure#main.py",
   },
 ];
 export default projectData;

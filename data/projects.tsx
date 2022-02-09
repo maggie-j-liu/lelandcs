@@ -5,6 +5,8 @@ import baasil_website from "./images/baasil_website.jpg";
 import clothes_color_changer from "./images/clothes_color_changer.png";
 import parallax from "./images/parallax.png";
 import hungergame from "./images/hungergame.png";
+import tina_pokedex from "./images/tina_pokedex.jpeg";
+import william_pokedex from "./images/william_pokedex.png";
 const projectData: ProjectProps[] = [
   {
     title: "A reinventing of the government: The Emoji Movie",
@@ -108,6 +110,32 @@ const projectData: ProjectProps[] = [
     ],
     link: "https://replit.com/@SophiaHuang7/PapayawhipUnwrittenStructure#main.py",
     code: "https://replit.com/@SophiaHuang7/PapayawhipUnwrittenStructure#main.py",
+  },
+  {
+    title: "Pokedex",
+    description: "It tells facts and what it is about",
+    imageSrc: tina_pokedex,
+    creators: [
+      {
+        name: "Tina",
+        link: "https://www.instagram.com/tina1383ram",
+      },
+    ],
+    link: "https://pokekots.tinaramezani1.repl.co",
+    code: "https://replit.com/@TinaRamezani/Pokekots",
+  },
+  {
+    title: "Pokedex",
+    description:
+      "My project just shows a bunch of pokemon with their type. I made it using replit with html, css, and javascript.",
+    imageSrc: william_pokedex,
+    creators: [
+      {
+        name: "William",
+      },
+    ],
+    link: "https://pokedex.pancakeuser.repl.co/",
+    code: "https://replit.com/@pancakeuser/Pokedex#script.js",
   },
 ];
 export default projectData;

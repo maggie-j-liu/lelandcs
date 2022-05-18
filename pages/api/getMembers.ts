@@ -12,7 +12,10 @@ const getMembers = async (req: NextApiRequest, res: NextApiResponse) => {
     )
   );
   const members = fileContents
-    .map((file) => JSON.parse(file))
+    .map((file) => {
+      console.log(file.replaceAll("“", '"'));
+      return JSON.parse(file.replaceAll("“", '"').replaceAll("”", '"'));
+    })
     .sort((a, b) => a.name.localeCompare(b.name));
   res.json({ members });
 };

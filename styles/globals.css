@@ -16,6 +16,10 @@
     @apply bg-gradient-to-r from-fuchsia to-blue-400 text-transparent bg-clip-text;
   }
 
+  .lighter-gradient {
+    @apply bg-gradient-to-r from-fuchsia-300 to-blue-300 text-transparent bg-clip-text;
+  }
+
   .gradient-border {
     border-image: linear-gradient(
         to right,

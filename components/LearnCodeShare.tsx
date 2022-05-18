@@ -18,7 +18,7 @@ const LearnCodeShare = () => {
           <span className={"border-b-2 gradient-border border-dashed"}>
             machine learning
           </span>
-          , you’ll learn everything you need to know to...
+          , you'll learn everything you need to know to...
         </p>
       </div>
       <div>
@@ -26,9 +26,9 @@ const LearnCodeShare = () => {
           Code. 💻
         </GlowTitle>
         <p className={"homepage-paragraph"}>
-          After you learn the basics, it’s time to get{" "}
+          After you learn the basics, it's time to get{" "}
           <span className={"light-gradient font-medium"}>hacking*</span>! With
-          your new knowledge, you’ll be able to code something{" "}
+          your new knowledge, you'll be able to code something{" "}
           <span className={"border-b-2 gradient-border border-dashed"}>
             innovative
           </span>
@@ -52,11 +52,11 @@ const LearnCodeShare = () => {
           Share. 🚀
         </GlowTitle>
         <p className={"homepage-paragraph"}>
-          Once you’ve made something you’re proud of, it’s time to{" "}
+          Once you've made something you're proud of, it's time to{" "}
           <Link href="/projects">
             <a
               className={
-                "border-b-2 gradient-border border-dashed hover:light-gradient font-bold"
+                "border-b-2 gradient-border hover:light-gradient font-bold"
               }
             >
               ship it

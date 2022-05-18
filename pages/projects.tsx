@@ -9,6 +9,12 @@ export interface Creator {
   name: string;
   link?: string;
 }
+interface StaticImageData {
+  src: string;
+  height: number;
+  width: number;
+  placeholder?: string;
+}
 export interface ProjectProps {
   imageSrc?: StaticImageData;
   title: string;

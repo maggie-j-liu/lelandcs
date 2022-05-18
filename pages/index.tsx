@@ -3,8 +3,10 @@ import HomepageCTA from "@/components/HomepageCTA";
 import SEO from "@/components/SEO";
 import GlowTitle from "@/components/GlowTitle";
 import Navbar from "@/components/Navbar";
+import { useState } from "react";
 
 export default function Home() {
+  const [members, setMembers] = useState([]);
   return (
     <div>
       <SEO title="Leland Computer Science Club" url="" />

@@ -3,7 +3,7 @@ module.exports = {
   images: {
     domains: ["lh3.googleusercontent.com", "robohash.org", "github.com"],
   },
-  experimental: { outputFileTracing: true },
+  outputFileTracing: true,
   async redirects() {
     return [
       {

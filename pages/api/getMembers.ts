@@ -2,6 +2,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs/promises";
 
 const getMembers = async (req: NextApiRequest, res: NextApiResponse) => {
+  const dirs = fs.readdir(process.cwd());
+  console.log(dirs);
   const memberFiles = (
     await fs.readdir(`${process.cwd()}/data/members`)
   ).filter((file) => file.endsWith(".json"));

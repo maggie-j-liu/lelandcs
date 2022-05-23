@@ -43,7 +43,7 @@
 
 @layer components {
   .ticket-button {
-    @apply flex-1 flex items-center justify-center rounded-lg text-xs sm:text-base md:text-lg font-light bg-transparent border sm:border-2 border-fuchsia pl-2 sm:pl-3 md:pl-4 py-1.5 xs:py-2 md:py-3 text-white hover:text-blue-50 hover:border-fuchsia-500 disabled:hover:border-fuchsia disabled:hover:text-white;
+    @apply flex-1 flex gap-2 items-center justify-center rounded-lg text-xs sm:text-base md:text-lg font-light bg-transparent border sm:border-2 border-fuchsia px-2 sm:px-3 md:px-4 py-1.5 xs:py-2 md:py-3 text-white hover:text-blue-50 hover:border-fuchsia-500 disabled:hover:border-fuchsia disabled:hover:text-white;
   }
 
   .ticket-vars {

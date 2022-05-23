@@ -21,27 +21,9 @@ const TicketCard = ({ user }: { user: firebase.User }) => {
       </div>
       <div
         className={
-          "mt-4 sm:mt-8 sm:w-full flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-8 w-28 xs:w-32 sm:max-w-xs md:max-w-md mx-auto"
+          "mt-4 sm:mt-8 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 md:gap-8 mx-auto w-max"
         }
       >
-        {num === null ? (
-          <button
-            className={"ticket-button brightness-[60%] cursor-not-allowed"}
-            disabled
-          >
-            <FiDownloadCloud />
-            <span className={"mx-auto"}>Download</span>
-          </button>
-        ) : (
-          <a
-            className={"ticket-button"}
-            href={`/api/ticket-image/${num}`}
-            download={"leland-cs-ticket.png"}
-          >
-            <FiDownloadCloud />
-            <span className={"mx-auto"}>Download</span>
-          </a>
-        )}
         <button
           className={`ticket-button ${
             num === null ? "brightness-[60%] cursor-not-allowed" : ""

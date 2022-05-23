@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Ticket from "@/components/Ticket";
 import formatTicketNum from "@/utils/formatTicketNum";
 import getTicket from "@/utils/getTicket";
-import Head from "next/head";
 import { SITE_URL } from "@/utils/constants";
 import Link from "next/link";
 import GlowTitle from "@/components/GlowTitle";
@@ -21,7 +20,6 @@ const TicketNum = ({
       <SEO
         title={`${displayName}'s Leland CS Club Ticket`}
         description={`Join ${displayName} at Leland Computer Science Club.`}
-        image={`/api/ticket-image/${ticketNum}`}
         url={`/ticket/${ticketNum}`}
       />
       <div

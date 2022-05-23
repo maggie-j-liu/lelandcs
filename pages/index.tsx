@@ -89,13 +89,13 @@ export default function Home() {
             </a>
             .
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center">
             {members.map((member) => (
               <div
                 key={member.github}
-                className="group relative border-4 border-fuchsia-300 rounded-2xl px-2 py-4"
+                className="overflow-hidden group relative border-4 border-fuchsia-300 rounded-2xl px-2 py-4"
               >
-                <div className="group-hover:blur-lg flex flex-col items-center">
+                <div className="group-hover:blur-2xl flex flex-col items-center">
                   <Image
                     width={300}
                     height={300}
@@ -109,7 +109,7 @@ export default function Home() {
                     @{member.github}
                   </div>
                 </div>
-                <div className="opacity-0 group-hover:opacity-100 duration-0 group-hover:duration-200 absolute inset-0 px-4 py-4 flex flex-col justify-center">
+                <div className="mix-blend-difference opacity-0 group-hover:opacity-100 duration-0 group-hover:duration-200 absolute inset-0 px-4 py-4 flex flex-col justify-center">
                   <div className="text-center font-semibold text-xl">
                     {member.name}
                   </div>
@@ -120,7 +120,9 @@ export default function Home() {
                     @{member.github}
                   </a>
                   <div className="h-4" />
-                  <p className="text-center">{member.bio}</p>
+                  <p className="overflow-auto text-center break-all">
+                    {member.bio}
+                  </p>
                 </div>
               </div>
             ))}

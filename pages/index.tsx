@@ -3,23 +3,16 @@ import HomepageCTA from "@/components/HomepageCTA";
 import SEO from "@/components/SEO";
 import GlowTitle from "@/components/GlowTitle";
 import Navbar from "@/components/Navbar";
-import { useEffect, useState } from "react";
 import Image from "next/image";
+import { GetStaticProps } from "next";
+import getMembers from "@/utils/getMembers";
 
 interface Member {
   name: string;
   github: string;
   bio: string;
 }
-export default function Home() {
-  const [members, setMembers] = useState<Member[]>([]);
-  useEffect(() => {
-    const getMembers = async () => {
-      const res = await fetch("/api/getMembers").then((res) => res.json());
-      setMembers(res.members);
-    };
-    getMembers();
-  }, []);
+export default function Home({ members }: { members: Member[] }) {
   return (
     <div>
       <SEO title="Leland Computer Science Club" url="" />
@@ -132,3 +125,12 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const members = await getMembers();
+  return {
+    props: {
+      members,
+    },
+  };
+};

@@ -1,9 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs/promises";
 
-const getMembers = async (req: NextApiRequest, res: NextApiResponse) => {
-  const dirs = fs.readdir(process.cwd());
-  console.log(dirs);
+const getMembers = async () => {
   const memberFiles = (
     await fs.readdir(`${process.cwd()}/data/members`)
   ).filter((file) => file.endsWith(".json"));
@@ -14,12 +11,9 @@ const getMembers = async (req: NextApiRequest, res: NextApiResponse) => {
     )
   );
   const members = fileContents
-    .map((file) => {
-      console.log(file.replaceAll("“", '"'));
-      return JSON.parse(file.replaceAll("“", '"').replaceAll("”", '"'));
-    })
+    .map((file) => JSON.parse(file))
     .sort((a, b) => a.name.localeCompare(b.name));
-  res.json({ members });
+  return members;
 };
 
 export default getMembers;

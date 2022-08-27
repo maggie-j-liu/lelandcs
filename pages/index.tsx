@@ -30,7 +30,7 @@ export default function Home({ members }: { members: Member[] }) {
             Links
           </GlowTitle>
           <div className={"gap-2 flex flex-col text-sm homepage-paragraph"}>
-            <div>
+            {/* <div>
               <span className={"font-medium"}>Registration form:</span>{" "}
               <a
                 className={
@@ -40,7 +40,7 @@ export default function Home({ members }: { members: Member[] }) {
               >
                 https://forms.gle/aGxrYH3v7cGdDgxH6
               </a>
-            </div>
+            </div> */}
             <div>
               <span className={"font-medium"}>Discord Server:</span>{" "}
               <a

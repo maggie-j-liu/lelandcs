@@ -31,8 +31,28 @@ const HomepageCTA = () => {
           <span className={"font-semibold"}>Wednesdays</span> 3:30 - 4:30 @ E-8
         </div>
       </div>
-      <div className={"px-8 sm:px-12 md:px-24"}>
-        <div
+      <div className="px-8 sm:px-12 md:px-24">
+        <div className="relative mt-6 w-max mx-auto">
+          <a
+            className="block duration-300 hover:duration-150 font-mono text-xl hover:scale-110 bg-white text-black px-4 py-2 rounded-lg"
+            href="https://forms.gle/4MGuPBgWut4k1HiA6"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Interest Form
+          </a>
+          <div
+            className={
+              "absolute z-[-10] -inset-1 blur-md bg-gradient-to-r from-fuchsia to-blue backdrop-blur-3xl animate-pulse-gradient hover:animate-none peer-hover:animate-none hover:opacity-100 peer-hover:opacity-100"
+            }
+          />
+          <div
+            className={
+              "absolute z-[-10] -inset-1 blur-md bg-gradient-to-r from-fuchsia to-blue backdrop-blur-3xl opacity-75"
+            }
+          />
+        </div>
+        {/* <div
           className={
             "mt-8 gap-8 flex flex-col sm:flex-row justify-center items-center text-xl"
           }
@@ -95,7 +115,7 @@ const HomepageCTA = () => {
               }
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
